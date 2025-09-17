@@ -18,7 +18,7 @@
     <li><a href="https://github.com/toninavhd/dsw">DSW</a></li>
     <li><a href="https://github.com/toninavhd/2_DAW/tree/main/DEW">DEW</a></li>
     <li><a href="https://github.com/toninavhd/2_DAW/tree/main/DOR">DOR</a></li>
-    <li><a href="https://github.com/toninavhd/2_DAW/tree/main/DPL">DPL</a></li>
+    <li><a href="https://github.com/toninavhd/dpl_antonio">DPL</a></li>
     <li><a href="https://github.com/toninavhd/2_DAW/tree/main/SSG">SSG</a></li>
     <li><a href="https://github.com/toninavhd/2_DAW/tree/main/SQJ">SQJ</a></li>
 </ul>
