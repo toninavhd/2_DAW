@@ -9,7 +9,7 @@ switch (operacion) {
   case "restar":
     console.log(`Resultado: ${num1 - num2}`);
     break;
-  case "mulgit":
+  case "mul":
     console.log(`Resultado: ${num1 * num2}`);
     break;
   case "div":
