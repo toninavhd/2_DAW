@@ -21,6 +21,7 @@ switch (operacion) {
     opr.push(fecha);
     historialOperaciones.push(opr);
     break;
+    
   case "restar":
     console.log(`Resultado: ${num1 - num2}`);
     opr.push(num1);
