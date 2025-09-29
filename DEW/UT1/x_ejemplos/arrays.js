@@ -3,7 +3,7 @@ let seleccionada = null;
 
 function agregarPelicula(nombre) {
   if (
-    typeof nombre !== String ||
+    typeof nombre !== "string" ||
     nombre.trim() == "" ||
     nombre == null ||
     nombre == undefined
