@@ -18,3 +18,4 @@ function agregarPelicula(nombre) {
 agregarPelicula("007");
 
 console.log(peliculas);
+
