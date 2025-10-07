@@ -69,6 +69,7 @@ Debe mostrar el título: **Calculadora en entorno nativo**
 ```dockerfile
 FROM php:8.1-fpm
 COPY . /var/www/html
+
 WORKDIR /var/www/html
 EXPOSE 8085
 CMD ["php", "-S", "0.0.0.0:8085", "-t", "/var/www/html"]
