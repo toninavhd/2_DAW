@@ -1,33 +1,11 @@
-//En javascript realiza las siguiente actividad:
-//Gestionaremos una economía doméstica sencilla. Para ello:
-//• Crea uno array de ingreso y gastos con valores iniciales, con el formato del apunte:
-//{fecha, concepto, importe}. Usa fecha (yyyy-mm-dd HH:mm:ss) como id.
-//• Crear un menú para gestionar:
-//◦ Agregar nuevo ingreso o gasto
-//◦ Editar un apunte (busca por fecha)
-//◦ Borrar un apunte (busca por fecha)
-//◦ Mostrar saldo
-//◦ Mostrar total por categoría (ingreso o gasto)
-//◦ Muestra resumen mensual dada una fecha yyyy-mm
-//• Calcular totales y métricas usando map y reduce.
-//• Ejecutable con Node. Sin librerías.
-//Crea el fichero economia.js.
-//1.- Realizar los cálculo (funciones). Uso de map y reduce:
-//• saldo() = sum(ingresos) − sum(gastos) con reduce.
-//• totalPorCategoria(tipo) → objeto {categoria: total} con reduce. tipo ingreso|gasto
-//• resumenMensual(yyyy_mm) filtra por mes y devuelve {ingresos, gastos, saldo} usando
-//reduce.
-//• lineasFormateadas() devuelve array de strings con map tipo "2025-10-05 | compra | gasto |
-//super | -23.40€".
-//2.- Prueba a realizar:
-//• Crea al menos 5 apuntes variados.
-//• Editar apunte y modificarlo.
-//• Borrar apunte.
-//• Muestra saldo().
-//• Muestra totalPorCategoria("gasto").
-//• Muestra resumenMensual("2025-10").
+ // economia.js
 
-// economia.js
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
 const ingresos = [
     { fecha: '2025-10-01 10:00:00', concepto: 'sueldo', importe: 1500 },
@@ -40,14 +18,13 @@ const gastos = [
     { fecha: '2025-10-04 18:00:00', concepto: 'ocio', importe: 70 }
 ];
 
-// Función para calcular el saldo
+
 const saldo = () => {
     const totalIngresos = ingresos.reduce((acc, ingreso) => acc + ingreso.importe, 0);
     const totalGastos = gastos.reduce((acc, gasto) => acc + gasto.importe, 0);
     return totalIngresos - totalGastos;
 };
 
-// Función para calcular el total por categoría
 const totalPorCategoria = (tipo) => {
     const list = tipo === 'ingreso' ? ingresos : gastos;
     return list.reduce((acc, item) => {
@@ -56,7 +33,6 @@ const totalPorCategoria = (tipo) => {
     }, {});
 };
 
-// Función para obtener resumen mensual
 const resumenMensual = (yyyy_mm) => {
     const ingresosFiltrados = ingresos.filter(ingreso => ingreso.fecha.startsWith(yyyy_mm));
     const gastosFiltrados = gastos.filter(gasto => gasto.fecha.startsWith(yyyy_mm));
@@ -71,13 +47,6 @@ const resumenMensual = (yyyy_mm) => {
     };
 };
 
-// Función que retorna líneas formateadas
-const lineasFormateadas = () => {
-    const todos = [...ingresos.map(i => ({ ...i, tipo: 'ingreso' })), ...gastos.map(g => ({ ...g, tipo: 'gasto' }))];
-    return todos.map(item => `${item.fecha} | ${item.concepto} | ${item.tipo} | ${item.importe}€`);
-};
-
-// Agregar entradas y salidas a los arrays
 const agregarApunte = (tipo, nuevoApunte) => {
     if (tipo === 'ingreso') {
         ingresos.push(nuevoApunte);
@@ -86,15 +55,13 @@ const agregarApunte = (tipo, nuevoApunte) => {
     }
 };
 
-// Editar un apunte por fecha
 const editarApunte = (fecha, nuevoApunte) => {
     const index = [...ingresos, ...gastos].findIndex(item => item.fecha === fecha);
     if (index !== -1) {
         if (index < ingresos.length) {
             ingresos[index] = nuevoApunte;
         } else {
-            const gastoIndex = index - ingresos.length;
-            gastos[gastoIndex] = nuevoApunte;
+            gastos[index - ingresos.length] = nuevoApunte;
         }
     }
 };
@@ -105,9 +72,65 @@ const borrarApunte = (fecha) => {
         if (index < ingresos.length) {
             ingresos.splice(index, 1);
         } else {
-            const gastoIndex = index - ingresos.length;
-            gastos.splice(gastoIndex, 1);
+            gastos.splice(index - ingresos.length, 1);
         }
     }
 };
 
+// Menú interactivo
+const mostrarMenu = () => {
+    console.log(`\n--- Gestión Económica Doméstica ---
+1. Agregar nuevo ingreso
+2. Agregar nuevo gasto
+3. Editar un apunte
+4. Borrar un apunte
+5. Mostrar saldo
+6. Mostrar total por categoría
+7. Mostrar resumen mensual
+0. Salir
+`);
+};
+
+const manejarOpcion = (opcion) => {
+    switch (opcion) {
+        case '1':
+            rl.question('Introduzca fecha (yyyy-mm-dd HH:mm:ss): ', (fecha) => {
+                rl.question('Concepto: ', (concepto) => {
+                    rl.question('Importe: ', (importe) => {
+                        agregarApunte('ingreso', { fecha, concepto, importe: parseFloat(importe) });
+                        console.log('Ingreso agregado.');
+                        solicitarOpcion();
+                    });
+                });
+            });
+            break;
+        case '2':
+            rl.question('Introduzca fecha (yyyy-mm-dd HH:mm:ss): ', (fecha) => {
+                rl.question('Concepto: ', (concepto) => {
+                    rl.question('Importe: ', (importe) => {
+                        agregarApunte('gasto', { fecha, concepto, importe: parseFloat(importe) });
+                        console.log('Gasto agregado.');
+                        solicitarOpcion();
+                    });
+                });
+            });
+            break;
+        case '3': 
+            editarApunte('apunte');
+            break;
+        case '4':
+            borrarApunte('apunte');
+            break;
+        case '5':
+            saldo();
+            break;
+        case '6':
+            totalPorCategoria();
+            break;
+        case '7':
+            resumenMensual();
+            break;
+        case '0':
+            break;
+        }
+}
