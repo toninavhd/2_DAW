@@ -1,5 +1,4 @@
- // economia.js
-
+// economia.js
 const readline = require('readline');
 
 const rl = readline.createInterface({
@@ -7,130 +6,126 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-const ingresos = [
-    { fecha: '2025-10-01 10:00:00', concepto: 'sueldo', importe: 1500 },
-    { fecha: '2025-10-05 12:00:00', concepto: 'dividendos', importe: 300 }
-];
+let apuntes = [];
 
-const gastos = [
-    { fecha: '2025-10-02 15:00:00', concepto: 'supermercado', importe: 50 },
-    { fecha: '2025-10-03 17:00:00', concepto: 'gas', importe: 40 },
-    { fecha: '2025-10-04 18:00:00', concepto: 'ocio', importe: 70 }
-];
+// Mostrar el menú
+function menu() {
+    console.log("\n--- Menú de Gestión de Economía Doméstica ---");
+    console.log("1. Agregar nuevo ingreso o gasto");
+    console.log("2. Editar un apunte");
+    console.log("3. Borrar un apunte");
+    console.log("4. Mostrar saldo");
+    console.log("5. Mostrar total por categoría");
+    console.log("6. Mostrar resumen mensual");
+    console.log("7. Salir");
+    rl.question("Elige una opción: ", opcion => {
+        manejarOpcion(opcion);
+    });
+}
 
-
-const saldo = () => {
-    const totalIngresos = ingresos.reduce((acc, ingreso) => acc + ingreso.importe, 0);
-    const totalGastos = gastos.reduce((acc, gasto) => acc + gasto.importe, 0);
-    return totalIngresos - totalGastos;
-};
-
-const totalPorCategoria = (tipo) => {
-    const list = tipo === 'ingreso' ? ingresos : gastos;
-    return list.reduce((acc, item) => {
-        acc[item.concepto] = (acc[item.concepto] || 0) + item.importe;
-        return acc;
-    }, {});
-};
-
-const resumenMensual = (yyyy_mm) => {
-    const ingresosFiltrados = ingresos.filter(ingreso => ingreso.fecha.startsWith(yyyy_mm));
-    const gastosFiltrados = gastos.filter(gasto => gasto.fecha.startsWith(yyyy_mm));
-
-    const totalIngresos = ingresosFiltrados.reduce((acc, ingreso) => acc + ingreso.importe, 0);
-    const totalGastos = gastosFiltrados.reduce((acc, gasto) => acc + gasto.importe, 0);
-    
-    return {
-        ingresos: totalIngresos,
-        gastos: totalGastos,
-        saldo: totalIngresos - totalGastos
-    };
-};
-
-const agregarApunte = (tipo, nuevoApunte) => {
-    if (tipo === 'ingreso') {
-        ingresos.push(nuevoApunte);
-    } else if (tipo === 'gasto') {
-        gastos.push(nuevoApunte);
-    }
-};
-
-const editarApunte = (fecha, nuevoApunte) => {
-    const index = [...ingresos, ...gastos].findIndex(item => item.fecha === fecha);
-    if (index !== -1) {
-        if (index < ingresos.length) {
-            ingresos[index] = nuevoApunte;
-        } else {
-            gastos[index - ingresos.length] = nuevoApunte;
-        }
-    }
-};
-
-const borrarApunte = (fecha) => {
-    const index = [...ingresos, ...gastos].findIndex(item => item.fecha === fecha);
-    if (index !== -1) {
-        if (index < ingresos.length) {
-            ingresos.splice(index, 1);
-        } else {
-            gastos.splice(index - ingresos.length, 1);
-        }
-    }
-};
-
-// Menú interactivo
-const mostrarMenu = () => {
-    console.log(`\n--- Gestión Económica Doméstica ---
-1. Agregar nuevo ingreso
-2. Agregar nuevo gasto
-3. Editar un apunte
-4. Borrar un apunte
-5. Mostrar saldo
-6. Mostrar total por categoría
-7. Mostrar resumen mensual
-0. Salir
-`);
-};
-
-const manejarOpcion = (opcion) => {
+// Función para manejar la opción seleccionada
+function manejarOpcion(opcion) {
     switch (opcion) {
         case '1':
-            rl.question('Introduzca fecha (yyyy-mm-dd HH:mm:ss): ', (fecha) => {
-                rl.question('Concepto: ', (concepto) => {
-                    rl.question('Importe: ', (importe) => {
-                        agregarApunte('ingreso', { fecha, concepto, importe: parseFloat(importe) });
-                        console.log('Ingreso agregado.');
-                        solicitarOpcion();
-                    });
-                });
-            });
+            agregarApunte();
             break;
         case '2':
-            rl.question('Introduzca fecha (yyyy-mm-dd HH:mm:ss): ', (fecha) => {
-                rl.question('Concepto: ', (concepto) => {
-                    rl.question('Importe: ', (importe) => {
-                        agregarApunte('gasto', { fecha, concepto, importe: parseFloat(importe) });
-                        console.log('Gasto agregado.');
-                        solicitarOpcion();
-                    });
-                });
-            });
+            editarApunte();
             break;
-        case '3': 
-            editarApunte('apunte');
+        case '3':
+            borrarApunte();
             break;
         case '4':
-            borrarApunte('apunte');
+            mostrarSaldo();
             break;
         case '5':
-            saldo();
+            mostrarTotalPorCategoria();
             break;
         case '6':
-            totalPorCategoria();
+            mostrarResumenMensual();
             break;
         case '7':
-            resumenMensual();
+            console.log("Saliendo...");
+            rl.close();
             break;
-        case '0':
-            break;
-        }
+        default:
+            console.log("Opción no válida.");
+            menu();
+    }
 }
+
+function agregarApunte() {
+    rl.question("Fecha (yyyy-mm-dd HH:mm:ss): ", fecha => {
+        rl.question("Concepto: ", concepto => {
+            rl.question("Importe: ", importe => {
+                rl.question("Tipo (ingreso/gasto): ", tipo => {
+                    apuntes.push({ fecha, concepto, importe: parseFloat(importe), tipo });
+                    console.log("Apunte agregado.");
+                    menu();
+                });
+            });
+        });
+    });
+}
+
+function editarApunte() {
+    rl.question("Fecha del apunte a editar: ", fecha => {
+        const apunte = apuntes.find(a => a.fecha === fecha);
+        if (apunte) {
+            rl.question("Nuevo concepto: ", nuevoConcepto => {
+                rl.question("Nuevo importe: ", nuevoImporte => {
+                    apunte.concepto = nuevoConcepto;
+                    apunte.importe = parseFloat(nuevoImporte);
+                    console.log("Apunte editado.");
+                    menu();
+                });
+            });
+        } else {
+            console.log("Apunte no encontrado.");
+            menu();
+        }
+    });
+}
+
+function borrarApunte() {
+    rl.question("Fecha del apunte a borrar: ", fecha => {
+        apuntes = apuntes.filter(a => a.fecha !== fecha);
+        console.log("Apunte borrado.");
+        menu();
+    });
+}
+
+function mostrarSaldo() {
+    const totalIngresos = apuntes.filter(a => a.tipo === 'ingreso').reduce((acc, a) => acc + a.importe, 0);
+    const totalGastos = apuntes.filter(a => a.tipo === 'gasto').reduce((acc, a) => acc + a.importe, 0);
+    const saldo = totalIngresos + totalGastos; // Gasto es negativo
+    console.log(`Saldo total: ${saldo}€`);
+    menu();
+}
+
+function mostrarTotalPorCategoria() {
+    rl.question("Tipo (ingreso/gasto): ", tipo => {
+        const total = apuntes.filter(a => a.tipo === tipo)
+            .reduce((acc, a) => acc + a.importe, 0);
+        console.log(`Total ${tipo}: ${total}€`);
+        menu();
+    });
+}
+
+function mostrarResumenMensual() {
+    rl.question("Fecha (yyyy-mm): ", yyyy_mm => {
+        const resumen = apuntes.filter(a => a.fecha.startsWith(yyyy_mm))
+            .reduce((acc, a) => {
+                if (a.tipo === 'ingreso') {
+                    acc.ingresos += a.importe;
+                } else {
+                    acc.gastos += a.importe;
+                }
+                return acc;
+            }, { ingresos: 0, gastos: 0 });
+        console.log(`Resumen para ${yyyy_mm}: Ingresos: ${resumen.ingresos}€ | Gastos: ${resumen.gastos}€`);
+        menu();
+    });
+}
+
+menu();
