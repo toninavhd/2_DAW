@@ -1,4 +1,4 @@
-// economia.js
+
 const readline = require('readline');
 
 const rl = readline.createInterface({
@@ -8,7 +8,6 @@ const rl = readline.createInterface({
 
 let apuntes = [];
 
-// Mostrar el menú
 function menu() {
     console.log("\n--- Menú de Gestión de Economía Doméstica ---");
     console.log("1. Agregar nuevo ingreso o gasto");
@@ -23,7 +22,6 @@ function menu() {
     });
 }
 
-// Función para manejar la opción seleccionada
 function manejarOpcion(opcion) {
     switch (opcion) {
         case '1':
