@@ -9,7 +9,7 @@ const rl = readline.createInterface({
 let apuntes = [];
 
 function menu() {
-    console.log(" ﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌ ");
+    console.log(" ﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌ ");
     console.log(" ﹌﹌﹌             M e n ú          ﹌﹌﹌");
     console.log("  ﹌﹌                                ﹌﹌ ");
     console.log("﹌﹌﹌ 1.Agregar nuevo ingreso o gasto﹌﹌﹌");
@@ -25,7 +25,8 @@ function menu() {
     console.log("﹌﹌﹌ 6. Mostrar resumen mensual     ﹌﹌﹌");
     console.log("  ﹌﹌                                ﹌﹌ ");
     console.log("﹌﹌﹌ 7.            Salir            ﹌﹌﹌");
-    console.log(" ﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌ ");
+    console.log("  ﹌﹌                                ﹌﹌ ");
+    console.log("﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌ ");
     rl.question("Elige una opción: ", opcion => {
         manejarOpcion(opcion);
     });
