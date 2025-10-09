@@ -9,14 +9,23 @@ const rl = readline.createInterface({
 let apuntes = [];
 
 function menu() {
-    console.log("\n--- Menú de Gestión de Economía Doméstica ---");
-    console.log("1. Agregar nuevo ingreso o gasto");
-    console.log("2. Editar un apunte");
-    console.log("3. Borrar un apunte");
-    console.log("4. Mostrar saldo");
-    console.log("5. Mostrar total por categoría");
-    console.log("6. Mostrar resumen mensual");
-    console.log("7. Salir");
+    console.log(" ﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌ ");
+    console.log(" ﹌﹌﹌             M e n ú          ﹌﹌﹌");
+    console.log("  ﹌﹌                                ﹌﹌ ");
+    console.log("﹌﹌﹌ 1.Agregar nuevo ingreso o gasto﹌﹌﹌");
+    console.log("  ﹌﹌                                ﹌﹌ ");
+    console.log("﹌﹌﹌ 2.       Editar un apunte      ﹌﹌﹌");
+    console.log("  ﹌﹌                                ﹌﹌ ");
+    console.log("﹌﹌﹌ 3.       Borrar un apunte      ﹌﹌﹌");
+    console.log("  ﹌﹌                                ﹌﹌ ");
+    console.log("﹌﹌﹌ 4.       Mostrar saldo         ﹌﹌﹌");
+    console.log("  ﹌﹌                                ﹌﹌ ");
+    console.log("﹌﹌﹌ 5. Mostrar total por categoría ﹌﹌﹌");
+    console.log("  ﹌﹌                                ﹌﹌ ");
+    console.log("﹌﹌﹌ 6. Mostrar resumen mensual     ﹌﹌﹌");
+    console.log("  ﹌﹌                                ﹌﹌ ");
+    console.log("﹌﹌﹌ 7.            Salir            ﹌﹌﹌");
+    console.log(" ﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌ ");
     rl.question("Elige una opción: ", opcion => {
         manejarOpcion(opcion);
     });
