@@ -39,12 +39,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // JUTO ENCIMA TINES LOS ELEMENTOS DEL DOM QUE NECESITAS
     sSize.textContent = window.screen.height + ' x ' + window.screen.width;
     sAvail.textContent = window.innerHeight + ' x ' + window.innerWidth;
-    sDepth.textContent = '24-bit'
-    nLang.textContent =
-    nOnline.textContent =
-    nCookie.textContent =
-    lHref.textContent =
-    lPhp.textContent = 
+    sDepth.textContent = window.screen.pixelDepth;
+    nLang.textContent = window.navigator.language;
+    nOnline.textContent = window.navigator.onLine? 'Si' : 'No';
+    nCookie.textContent = window.navigator.cookieEnabled? 'Habilitadas' : 'No habilitadas';
+    lHref.textContent = window.location.href + window.location.host + window.location.pathname;
+    lPhp.textContent = window.updateDisplay.
 
     
   }
