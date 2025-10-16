@@ -37,6 +37,16 @@ document.addEventListener("DOMContentLoaded", () => {
   function paintInfo() {
     // AQUI VA EL CODIGO DEL APARTADO 1.
     // JUTO ENCIMA TINES LOS ELEMENTOS DEL DOM QUE NECESITAS
+    sSize.textContent = window.screen.height + ' x ' + window.screen.width;
+    sAvail.textContent = window.innerHeight + ' x ' + window.innerWidth;
+    sDepth.textContent = '24-bit'
+    nLang.textContent =
+    nOnline.textContent =
+    nCookie.textContent =
+    lHref.textContent =
+    lPhp.textContent = 
+
+    
   }
   paintInfo();
 
