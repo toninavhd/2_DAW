@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Galería</title>
+    <link rel="stylesheet" href="style/galeria.css">
+ 
+</head>
+<body>
+    
+    <header>
+        <h1 align="center">Galería responsive</h1>
+
+        <nav class="main-nav" aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+            </ul>
+        </nav>
+
+        <p>Se carga primero una miniatura y luego se sustituyen las imágenes reales mediante JavaScript.</p>
+    </header>
+
+    <main class="gallery">
+        <!-- Imagen 1: móvil / tablet / escritorio -->
+        <figure class="card">
+            <picture>
+                <source data-srcset="images/gallery1-large.jpg 1x, images/gallery1-large@2x.jpg 2x" media="(min-width:1200px)">
+                <source data-srcset="images/gallery1-medium.jpg 1x, images/gallery1-medium@2x.jpg 2x" media="(min-width:600px)">
+                <!-- img empieza con miniatura en src; data-src contiene la real que JS pondrá -->
+                <img src="images/gallery1-thumb.jpg" data-src="images/gallery1-medium.jpg" data-srcset="images/gallery1-medium.jpg 1x, images/gallery1-medium@2x.jpg 2x" alt="Paisaje 1">
+            </picture>
+            <figcaption>Imagen adaptable 1</figcaption>
+        </figure>
+
+        <!-- Imagen 2: móvil / tablet / escritorio -->
+        <figure class="card">
+            <picture>
+                <source data-srcset="images/gallery2-large.jpg 1x, images/gallery2-large@2x.jpg 2x" media="(min-width:1200px)">
+                <source data-srcset="images/gallery2-medium.jpg 1x, images/gallery2-medium@2x.jpg 2x" media="(min-width:600px)">
+                <img src="images/gallery2-thumb.jpg" data-src="images/gallery2-medium.jpg" data-srcset="images/gallery2-medium.jpg 1x, images/gallery2-medium@2x.jpg 2x" alt="Paisaje 2">
+            </picture>
+            <figcaption>Imagen adaptable 2</figcaption>
+        </figure>
+
+        <!-- Imagen 3: con map (áreas clickables hacia redes / páginas externas) -->
+        <figure class="card">
+            <picture>
+                <source data-srcset="images/gallery3-large.jpg 1x, images/gallery3-large@2x.jpg 2x" media="(min-width:1200px)">
+                <source data-srcset="images/gallery3-medium.jpg 1x, images/gallery3-medium@2x.jpg 2x" media="(min-width:600px)">
+                <!-- usemap se mantiene; la miniatura se muestra primero -->
+                <img src="images/gallery3-thumb.jpg" data-src="images/gallery3-medium.jpg" data-srcset="images/gallery3-medium.jpg 1x, images/gallery3-medium@2x.jpg 2x" alt="Collage redes" usemap="#socialmap">
+            </picture>
+            <figcaption>Imagen con áreas clickables</figcaption>
+
+            <!-- mapa de ejemplo: coords en píxeles (ajusta según tus imágenes) -->
+            <map name="socialmap">
+                <area shape="rect" coords="10,10,110,110" href="https://twitter.com/" target="_blank" rel="noopener noreferrer" alt="Twitter">
+                <area shape="rect" coords="120,10,220,110" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" alt="Facebook">
+                <area shape="rect" coords="230,10,330,110" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" alt="Instagram">
+            </map>
+        </figure>
+    </main>
+
+<script src="js/actions.js"></script>
+</body>
+</html>

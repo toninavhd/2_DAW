@@ -1,0 +1,94 @@
+body {
+            margin: 0;
+            min-height: 100vh;
+            background-image: image-set(
+                url("images/bg-small.jpg") 1x,
+                url("images/bg-small@2x.jpg") 2x
+            );
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+        }
+
+        /* Medium screens */
+@media (min-width: 600px) {
+            body {
+                background-image: image-set(
+                    url("images/bg-medium.jpg") 1x,
+                    url("images/bg-medium@2x.jpg") 2x
+                );
+            }
+        }
+
+        /* Large screens */
+@media (min-width: 1200px) {
+            body {
+                background-image: image-set(
+                    url("images/bg-large.jpg") 1x,
+                    url("images/bg-large@2x.jpg") 2x
+                );
+            }
+        }
+
+header {
+        padding: 20px;
+        background: rgba(0,0,0,0.35); /* subtle overlay so logo/text is readable */
+        overflow: auto;
+        border-radius:6px;
+        box-shadow:0 1px 4px rgba(0,0,0,.08)
+        
+        }
+.logo {
+            float: left;
+            display: block;
+            margin-right: 16px;
+        }
+h1 {
+            margin: 0;
+            padding-top: 8px;
+            font-size: 1.25rem;
+        }
+
+.site-header::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+@media (max-width: 420px) {
+            .logo {
+                width: 80px;
+                height: auto;
+            }
+            h1 { font-size: 1rem; }
+        }
+.site-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+        }
+.site-header .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+.main-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+.main-nav a {
+            color: inherit;
+            text-decoration: none;
+            padding: 6px 10px;
+            border-radius: 4px;
+        }
+.main-nav a:hover {
+            background: rgba(0,0,0,0.05);
+        }
+        
