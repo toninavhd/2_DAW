@@ -1,0 +1,109 @@
+header {
+        padding: 20px;
+        background: rgba(0,0,0,0.35); /* subtle overlay so logo/text is readable */
+        overflow: auto;
+        border-radius:6px;
+        box-shadow:0 1px 4px rgba(0,0,0,.08)
+        
+        }
+.logo {
+            float: left;
+            display: block;
+            margin-right: 16px;
+        }
+h1 {
+            margin: 0;
+            padding-top: 8px;
+            font-size: 1.25rem;
+        }
+
+.site-header::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+@media (max-width: 420px) {
+            .logo {
+                width: 80px;
+                height: auto;
+            }
+            h1 { font-size: 1rem; }
+        }
+.site-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+        }
+.site-header .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+.main-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+.main-nav a {
+            color: inherit;
+            text-decoration: none;
+            padding: 6px 10px;
+            border-radius: 4px;
+        }
+.main-nav a:hover {
+            background: rgba(0,0,0,0.05);
+        }
+        
+body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            /* Fondo que cambia con resolución */
+            background-image: image-set(
+                url("../images/contact-bg.jpg") 1x,
+                url("../images/contact-bg@2x.jpg") 2x
+            );
+            background-size: cover;
+            background-position: center;
+        }
+
+        .decorative-image {
+            max-width: 100%;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .decorative-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .contact-container {
+                margin: 1rem;
+                padding: 1rem;
+            }
+        }
+
+        /* High DPI background version */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            body {
+                background-image: url("../images/contact-bg@2x.jpg");
+            }
+        }
