@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Galería</title>
     <link rel="stylesheet" href="style/galeria.css">
+    
+    <link rel="preload" as="image" href="images/miku2.jpg">
+    <link rel="prefetch" href="images/mikubacteria.jpg">
+    <link rel="prefetch" href="images/miku3.jpeg">
 </head>
 <body>
-    <header>
+    <header class="site-header">
         <h1>Galería</h1>
         <nav class="main-nav">
             <ul>
@@ -22,27 +26,42 @@
             <picture>
                 <source srcset="images/miku2.jpg" media="(min-width: 1200px)">
                 <source srcset="images/miku2.jpg" media="(min-width: 600px)">
-                <img src="images/miku2.jpg" alt="Hatsune Miku 1">
+                <img 
+                    src="images/miku2.jpg" 
+                    alt="Hatsune Miku con fondo azul" 
+                    width="800" 
+                    height="450"
+                    loading="eager">
             </picture>
-            <figcaption>Miku 1</figcaption>
+            <figcaption>Miku Project Diva</figcaption>
         </figure>
 
         <figure class="card">
             <picture>
                 <source srcset="images/mikubacteria.jpg" media="(min-width: 1200px)">
                 <source srcset="images/mikubacteria.jpg" media="(min-width: 600px)">
-                <img src="images/mikubacteria.jpg" alt="Hatsune Miku 2">
+                <img 
+                    src="images/mikubacteria.jpg" 
+                    alt="Hatsune Miku" 
+                    width="800" 
+                    height="450"
+                    loading="lazy">
             </picture>
-            <figcaption>Miku 2</figcaption>
+            <figcaption>Miku RGB</figcaption>
         </figure>
 
         <figure class="card">
             <picture>
                 <source srcset="images/miku3.jpeg" media="(min-width: 1200px)">
                 <source srcset="images/miku3.jpeg" media="(min-width: 600px)">
-                <img src="images/miku3.jpeg" alt="Hatsune Miku 3">
+                <img 
+                    src="images/miku3.jpeg" 
+                    alt="Hatsune Miku pose casual" 
+                    width="800" 
+                    height="450"
+                    loading="lazy">
             </picture>
-            <figcaption>Miku 3</figcaption>
+            <figcaption>Miku Casual</figcaption>
         </figure>
     </main>
 </body>
