@@ -6,16 +6,6 @@ header {
         box-shadow:0 1px 4px rgba(0,0,0,.08)
         
         }
-.logo {
-            float: left;
-            display: block;
-            margin-right: 16px;
-        }
-h1 {
-            margin: 0;
-            padding-top: 8px;
-            font-size: 1.25rem;
-        }
 
 .site-header::after {
             content: "";
@@ -34,6 +24,7 @@ h1 {
             align-items: center;
             justify-content: space-between;
             padding: 12px 20px;
+            background: rgba(51, 51, 51, 0.9);
         }
 .site-header .brand {
             display: flex;
@@ -47,11 +38,12 @@ h1 {
             display: flex;
             gap: 12px;
             align-items: center;
+            justify-content: center;
         }
 .main-nav a {
-            color: inherit;
+            color: white;
             text-decoration: none;
-            padding: 6px 10px;
+            padding: 0.5rem 1rem;
             border-radius: 4px;
         }
 .main-nav a:hover {
@@ -62,13 +54,11 @@ body {
             margin: 0;
             min-height: 100vh;
             font-family: Arial, sans-serif;
-            /* Fondo que cambia con resolución */
-            background-image: image-set(
-                url("images/bg-large.jpeg") 1x,
-                url("images/bg-large@2x.jpeg") 2x
-            );
+            background-image: url('../images/miku-large.jpeg');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
+            
         }
 
         .decorative-image {
@@ -81,7 +71,7 @@ body {
             max-width: 800px;
             margin: 2rem auto;
             padding: 2rem;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
@@ -89,8 +79,8 @@ body {
         .decorative-image img {
             width: 100%;
             height: auto;
-            border-radius: 6px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
         }
 
         /* Responsive adjustments */
@@ -103,6 +93,6 @@ body {
 
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             body {
-                background-image: url("images/bg-large@2x.jpeg");
+                background-image: url('../images/bg-contact@2x.jpg');
             }
         }
