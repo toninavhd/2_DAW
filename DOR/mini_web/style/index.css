@@ -1,40 +1,64 @@
 body {
+  font-family: Arial, sans-serif;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  background-image: url('images/bg-large.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .body {
+    background-image: url('images/bg-large@2x.jpeg');
+  }
+}
+
+@media (min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+  .body {
+    background-image: url('images/bg-large@3x.jpeg');
+  }
+}
+
+.logo {
+  float: left;
+  width: 120px;
+  height: auto;
+  margin: 10px;
+}
+
+/* 
+body {
             margin: 0;
             min-height: 100vh;
-            background-image: image-set(
-                url("images/bg-small.jpg") 1x,
-                url("images/bg-small@2x.jpg") 2x
-            );
+            background-image: url('images/bg-large.jpeg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             font-family: Arial, Helvetica, sans-serif;
-            color: #fff;
         }
 
-        /* Medium screens */
-@media (min-width: 600px) {
+@media (min-device-pixel-ratio: 2) , (min-resolution: 192dpi) {
             body {
                 background-image: image-set(
-                    url("images/bg-medium.jpg") 1x,
-                    url("images/bg-medium@2x.jpg") 2x
+                    url("images/bg-large@2x.jpeg") 2x
                 );
             }
         }
 
-        /* Large screens */
-@media (min-width: 1200px) {
+@media (min-device-pixel-ratio: 3) , (min-resolution: 288dpi) {
             body {
                 background-image: image-set(
-                    url("images/bg-large.jpg") 1x,
-                    url("images/bg-large@2x.jpg") 2x
+                    url("images/bg-large@3x.jpeg") 3x
                 );
             }
         }
 
 header {
         padding: 20px;
-        background: rgba(0,0,0,0.35); /* subtle overlay so logo/text is readable */
+        background: rgba(0,0,0,0.35); 
         overflow: auto;
         border-radius:6px;
         box-shadow:0 1px 4px rgba(0,0,0,.08)
@@ -92,3 +116,5 @@ h1 {
             background: rgba(0,0,0,0.05);
         }
         
+
+*/

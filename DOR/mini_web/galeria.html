@@ -23,34 +23,31 @@
     </header>
 
     <main class="gallery">
-        <!-- Imagen 1: móvil / tablet / escritorio -->
         <figure class="card">
             <picture>
-                <source data-srcset="images/gallery1-large.jpg 1x, images/gallery1-large@2x.jpg 2x" media="(min-width:1200px)">
-                <source data-srcset="images/gallery1-medium.jpg 1x, images/gallery1-medium@2x.jpg 2x" media="(min-width:600px)">
-                <!-- img empieza con miniatura en src; data-src contiene la real que JS pondrá -->
-                <img src="images/miku1.jpeg" data-src="images/gallery1-medium.jpg" data-srcset="images/gallery1-medium.jpg 1x, images/gallery1-medium@2x.jpg 2x" alt="HatsuneMiku1">
+                <source data-srcset="images/miku1.jpeg 1x, images/bg-large@2x.jpeg 2x" media="(min-width:1200px)">
+                <source data-srcset="images/miku1.jpeg 1x, images/bg-large@2x.jpeg 2x" media="(min-width:600px)">
+                <img src="images/miku1.jpeg" data-src="images/gallery1-medium.jpg" data-srcset="images/miku1.jpeg 1x, images/bg-large@2x.jpg 2x" alt="HatsuneMiku1">
             </picture>
             <figcaption>Imagen adaptable 1</figcaption>
         </figure>
 
-        <!-- Imagen 2: móvil / tablet / escritorio -->
         <figure class="card">
             <picture>
-                <source data-srcset="images/gallery2-large.jpg 1x, images/gallery2-large@2x.jpg 2x" media="(min-width:1200px)">
-                <source data-srcset="images/gallery2-medium.jpg 1x, images/gallery2-medium@2x.jpg 2x" media="(min-width:600px)">
-                <img src="images/gallery2-thumb.jpg" data-src="images/gallery2-medium.jpg" data-srcset="images/gallery2-medium.jpg 1x, images/gallery2-medium@2x.jpg 2x" alt="HatsuneMiku2">
+                <source data-srcset="images/miku2.jpeg 1x, images/bg-large@2x.jpeg 2x" media="(min-width:1200px)">
+                <source data-srcset="images/miku2.jpeg 1x, images/bg-large@2x.jpeg 2x" media="(min-width:600px)">
+                <img src="images/miku2.jpeg" data-src="images/gallery1-medium.jpg" data-srcset="images/miku1.jpeg 1x, images/bg-large@2x.jpg 2x" alt="HatsuneMiku1">
             </picture>
             <figcaption>Imagen adaptable 2</figcaption>
         </figure>
 
-        <!-- Imagen 3: con map (áreas clickables hacia redes / páginas externas) -->
+      
         <figure class="card">
             <picture>
                 <source data-srcset="images/gallery3-large.jpg 1x, images/gallery3-large@2x.jpg 2x" media="(min-width:1200px)">
                 <source data-srcset="images/gallery3-medium.jpg 1x, images/gallery3-medium@2x.jpg 2x" media="(min-width:600px)">
                 <!-- usemap se mantiene; la miniatura se muestra primero -->
-                <img src="images/gallery3-thumb.jpg" data-src="images/gallery3-medium.jpg" data-srcset="images/gallery3-medium.jpg 1x, images/gallery3-medium@2x.jpg 2x" alt="Collage redes" usemap="#socialmap">
+                <img src="images/miku3.jpeg" data-src="images/gallery3-medium.jpg" data-srcset="images/gallery3-medium.jpg 1x, images/gallery3-medium@2x.jpg 2x" alt="Collage redes" usemap="#socialmap">
             </picture>
             <figcaption>Imagen con áreas clickables</figcaption>
 

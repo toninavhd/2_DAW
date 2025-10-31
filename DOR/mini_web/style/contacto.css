@@ -1,6 +1,6 @@
 header {
         padding: 20px;
-        background: rgba(0,0,0,0.35); /* subtle overlay so logo/text is readable */
+        background: rgba(0,0,0,0.35);
         overflow: auto;
         border-radius:6px;
         box-shadow:0 1px 4px rgba(0,0,0,.08)
@@ -64,8 +64,8 @@ body {
             font-family: Arial, sans-serif;
             /* Fondo que cambia con resolución */
             background-image: image-set(
-                url("../images/contact-bg.jpg") 1x,
-                url("../images/contact-bg@2x.jpg") 2x
+                url("images/bg-large.jpeg") 1x,
+                url("images/bg-large@2x.jpeg") 2x
             );
             background-size: cover;
             background-position: center;
@@ -101,9 +101,8 @@ body {
             }
         }
 
-        /* High DPI background version */
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             body {
-                background-image: url("../images/contact-bg@2x.jpg");
+                background-image: url("images/bg-large@2x.jpeg");
             }
         }
