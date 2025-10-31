@@ -5,61 +5,45 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Galería</title>
     <link rel="stylesheet" href="style/galeria.css">
- 
 </head>
 <body>
-    
     <header>
-        <h1 align="center">Galería responsive</h1>
-
-        <nav class="main-nav" aria-label="Navegación principal">
+        <h1>Galería</h1>
+        <nav class="main-nav">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
-
-        <p>Se carga primero una miniatura y luego se sustituyen las imágenes reales mediante JavaScript.</p>
     </header>
 
     <main class="gallery">
         <figure class="card">
             <picture>
-                <source data-srcset="images/miku1.jpeg 1x, images/bg-large@2x.jpeg 2x" media="(min-width:1200px)">
-                <source data-srcset="images/miku1.jpeg 1x, images/bg-large@2x.jpeg 2x" media="(min-width:600px)">
-                <img src="images/miku1.jpeg" data-src="images/gallery1-medium.jpg" data-srcset="images/miku1.jpeg 1x, images/bg-large@2x.jpg 2x" alt="HatsuneMiku1">
+                <source srcset="images/miku2.jpg" media="(min-width: 1200px)">
+                <source srcset="images/miku2.jpg" media="(min-width: 600px)">
+                <img src="images/miku2.jpg" alt="Hatsune Miku 1">
             </picture>
-            <figcaption>Imagen adaptable 1</figcaption>
+            <figcaption>Miku 1</figcaption>
         </figure>
 
         <figure class="card">
             <picture>
-                <source data-srcset="images/miku2.jpeg 1x, images/bg-large@2x.jpeg 2x" media="(min-width:1200px)">
-                <source data-srcset="images/miku2.jpeg 1x, images/bg-large@2x.jpeg 2x" media="(min-width:600px)">
-                <img src="images/miku2.jpeg" data-src="images/gallery1-medium.jpg" data-srcset="images/miku1.jpeg 1x, images/bg-large@2x.jpg 2x" alt="HatsuneMiku1">
+                <source srcset="images/mikubacteria.jpg" media="(min-width: 1200px)">
+                <source srcset="images/mikubacteria.jpg" media="(min-width: 600px)">
+                <img src="images/mikubacteria.jpg" alt="Hatsune Miku 2">
             </picture>
-            <figcaption>Imagen adaptable 2</figcaption>
+            <figcaption>Miku 2</figcaption>
         </figure>
 
-      
         <figure class="card">
             <picture>
-                <source data-srcset="images/gallery3-large.jpg 1x, images/gallery3-large@2x.jpg 2x" media="(min-width:1200px)">
-                <source data-srcset="images/gallery3-medium.jpg 1x, images/gallery3-medium@2x.jpg 2x" media="(min-width:600px)">
-                <!-- usemap se mantiene; la miniatura se muestra primero -->
-                <img src="images/miku3.jpeg" data-src="images/gallery3-medium.jpg" data-srcset="images/gallery3-medium.jpg 1x, images/gallery3-medium@2x.jpg 2x" alt="Collage redes" usemap="#socialmap">
+                <source srcset="images/miku3.jpeg" media="(min-width: 1200px)">
+                <source srcset="images/miku3.jpeg" media="(min-width: 600px)">
+                <img src="images/miku3.jpeg" alt="Hatsune Miku 3">
             </picture>
-            <figcaption>Imagen con áreas clickables</figcaption>
-
-            <!-- mapa de ejemplo: coords en píxeles (ajusta según tus imágenes) -->
-            <map name="socialmap">
-                <area shape="rect" coords="10,10,110,110" href="https://twitter.com/" target="_blank" rel="noopener noreferrer" alt="Twitter">
-                <area shape="rect" coords="120,10,220,110" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" alt="Facebook">
-                <area shape="rect" coords="230,10,330,110" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" alt="Instagram">
-            </map>
+            <figcaption>Miku 3</figcaption>
         </figure>
     </main>
-
-<script src="js/actions.js"></script>
 </body>
 </html>
