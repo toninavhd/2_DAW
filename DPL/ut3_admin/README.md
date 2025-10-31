@@ -1,12 +1,13 @@
 
 <center>
 
-# TÍTULO DE LA PRÁCTICA
+# Administración de servidores web.
 
 
 </center>
 
-***Nombre:***
+***Nombre:*** Antonio Navarro Hernández
+
 ***Curso:*** 2º de Ciclo Superior de Desarrollo de Aplicaciones Web.
 
 ### ÍNDICE
@@ -20,15 +21,17 @@
 
 #### ***Introducción***. <a name="id1"></a>
 
-Aquí explicamos brevemente la parte teórica que tiene que ver con la práctica que se va a realizar
+En esta tarea se nos pide desplegar una aplicación web escrita en HTML/Javascript que permita usar el módulo de Nginx ngx_small_light.
+
+Este módulo se utiliza para generar miniaturas de imágenes a través de peticiones URL.
 
 #### ***Objetivos***. <a name="id2"></a>
 
-Aquí explicamos los objetivos que se pretenden alcanzar al realizar la práctica.
+El objetivo de esta práctica es crear un *virtual host* que atienda peticiones y habilitar el módulo ngx_small_light con el fin de crear una aplicación web que sea accesible y funcional para otros usuarios.
 
 #### ***Material empleado***. <a name="id3"></a>
 
-Enumeramos el material empleado tanto hardware como software y las conficuraciones que hacemos (configuraciones de red por ejemplo) 
+Para esta tarea utilizamos una máquina virtual como servidor, varias imagenes proporcionadas por el profesor y respecto al hardware nuestro PC.
 
 #### ***Desarrollo***. <a name="id4"></a>
 

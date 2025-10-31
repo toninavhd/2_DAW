@@ -44,10 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
     nOnline.textContent = window.navigator.onLine? 'Si' : 'No';
     nCookie.textContent = window.navigator.cookieEnabled? 'Habilitadas' : 'No habilitadas';
     lHref.textContent = window.location.href + window.location.host + window.location.pathname;
-    lPhp.textContent = window.updateDisplay.
-
-    
+    lPhp.textContent = window.location.protocol + lHref.textContent;    
   }
+  
   paintInfo();
 
   document.getElementById("btn-refresh")?.addEventListener("click", paintInfo);
@@ -76,8 +75,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.getElementById("btn-resize")?.addEventListener("click", () => {
-    const w = Number(document.getElementById("resize-w").value) || 200;
-    const h = Number(document.getElementById("resize-h").value) || 200;
+    const w = Number(document.getElementById("rs-w").value) || 200;
+    const h = Number(document.getElementById("rs-h").value) || 200;
     // AQUI VA EL CODIGO DEL APARTADO 2.
     // REDIMENSIONAR a w y h indicadas
   });
