@@ -1,120 +1,71 @@
 body {
-  font-family: Arial, sans-serif;
-  color: rgb(0, 0, 0);
-  text-align: center;
-  background-image: url('images/bg-large.jpeg');
+  margin: 0;
+  min-height: 100vh;
+  background-image: url('../images/miku-large.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  font-family: Arial, sans-serif;
 }
 
 
-@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .body {
-    background-image: url('images/bg-large@2x.jpeg');
+@media (min-width: 600px) {
+  body {
+    background-image: url('../images/miku-medium.jpeg');
   }
 }
 
-@media (min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
-  .body {
-    background-image: url('images/bg-large@3x.jpeg');
+
+@media (min-width: 1200px) {
+  body {
+    background-image: url('../images/miku-large.jpeg');
   }
+}
+
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body {
+    background-image: url('../images/miku-small@2x.jpeg');
+  }
+
+  @media (min-width: 600px) {
+    body {
+      background-image: url('../images/miku-medium@2x.jpeg');
+    }
+  }
+
+  @media (min-width: 1200px) {
+    body {
+      background-image: url('../images/miku-large@2x.jpeg');
+    }
+  }
+}
+
+.site-header {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
   float: left;
-  width: 120px;
-  height: auto;
-  margin: 10px;
+  width: 60px;
+  height: 60px;
+  margin-right: 1rem;
 }
 
-/* 
-body {
-            margin: 0;
-            min-height: 100vh;
-            background-image: url('images/bg-large.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-@media (min-device-pixel-ratio: 2) , (min-resolution: 192dpi) {
-            body {
-                background-image: image-set(
-                    url("images/bg-large@2x.jpeg") 2x
-                );
-            }
-        }
-
-@media (min-device-pixel-ratio: 3) , (min-resolution: 288dpi) {
-            body {
-                background-image: image-set(
-                    url("images/bg-large@3x.jpeg") 3x
-                );
-            }
-        }
-
-header {
-        padding: 20px;
-        background: rgba(0,0,0,0.35); 
-        overflow: auto;
-        border-radius:6px;
-        box-shadow:0 1px 4px rgba(0,0,0,.08)
-        
-        }
-.logo {
-            float: left;
-            display: block;
-            margin-right: 16px;
-        }
-h1 {
-            margin: 0;
-            padding-top: 8px;
-            font-size: 1.25rem;
-        }
-
-.site-header::after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-@media (max-width: 420px) {
-            .logo {
-                width: 80px;
-                height: auto;
-            }
-            h1 { font-size: 1rem; }
-        }
-.site-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 20px;
-        }
-.site-header .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
 .main-nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 12px;
-            align-items: center;
-        }
-.main-nav a {
-            color: inherit;
-            text-decoration: none;
-            padding: 6px 10px;
-            border-radius: 4px;
-        }
-.main-nav a:hover {
-            background: rgba(0,0,0,0.05);
-        }
-        
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
 
-*/
+.main-nav a {
+  text-decoration: none;
+  color: #333;
+  padding: 0.5rem 1rem;
+}
