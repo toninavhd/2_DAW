@@ -33,7 +33,6 @@ while (rndnumber != 7) {
     rndnumber = Math.floor(Math.random() * 10 + 1);
     counter++;
 }
-
 console.log(counter)
 
 
@@ -47,7 +46,7 @@ while (n = 0){
     n --;
 };
 
-// ------------------------ Do-while ------------------------------
+// ------------------------ Do...while ------------------------------
 
 
 //Pide un número con prompt (o simúlalo con una variable). Repite hasta que sea un entero positivo. Usa do...while.
