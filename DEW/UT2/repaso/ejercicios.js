@@ -51,11 +51,19 @@ while (n = 0){
 
 //Pide un número con prompt (o simúlalo con una variable). Repite hasta que sea un entero positivo. Usa do...while.
 
-let condicion = 20;
+let numero;
 do {
-console.log(`Valor de condicion: ${condicion}`);
-condicion--;
-} while (condicion >= 0);
+  const entrada = prompt("Ingresa un número entero positivo:");
+
+  numero = parseInt(entrada);
+
+  if (isNaN(numero) || numero <= 0) {
+    alert("Por favor, ingresa un número entero positivo válido.");
+  }
+} while (isNaN(numero) || numero <= 0);
+
+console.log("El número ingresado es:", numero);
+
 
 //2 Simula un menú simple: muestra opciones 1–3 y sale al elegir 0. Usa do...while para repetir hasta 0.
 
@@ -90,7 +98,6 @@ do {
   console.log("\n"); 
 
 } while (opcion !== 0);
-
 
 /**
  * Simula el lanzamiento de un dado de 6 caras hasta que salga un 6.
