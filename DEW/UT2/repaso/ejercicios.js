@@ -55,7 +55,7 @@ let numero;
 do {
   const entrada = prompt("Ingresa un número entero positivo:");
 
-  numero = parseInt(entrada);
+  numero = (entrada);
 
   if (isNaN(numero) || numero <= 0) {
     alert("Por favor, ingresa un número entero positivo válido.");
