@@ -27,5 +27,13 @@ Máquina virtual con el sistema operativo **Debian 12 server**
 
 #### ***Desarrollo***. <a name="id4"></a>
 
-![1]('Captura de pantalla 2025-11-12 154714.png')
 
+![2](https://github.com/toninavhd/2_DAW/blob/main/DPL/UT3/dpl-tarea-telem/2.png?raw=true)
+
+![3](https://github.com/toninavhd/2_DAW/blob/main/DPL/UT3/dpl-tarea-telem/postgress.png?raw=true)
+![4](https://github.com/toninavhd/2_DAW/blob/main/DPL/UT3/dpl-tarea-telem/4postgress.png?raw=true)
+![5](https://github.com/toninavhd/2_DAW/blob/main/DPL/UT3/dpl-tarea-telem/5net-toolspostgress.png?raw=true)
+![6](https://github.com/toninavhd/2_DAW/blob/main/DPL/UT3/dpl-tarea-telem/6net-toolspostgress.png?raw=true)
+![7](https://github.com/toninavhd/2_DAW/blob/main/DPL/UT3/dpl-tarea-telem/7ahiva.png?raw=true)
+![hecho](https://github.com/toninavhd/2_DAW/blob/main/DPL/UT3/dpl-tarea-telem/Captura%20de%20pantalla%202025-11-12%20154714.png?raw=true)
+![9](https://github.com/toninavhd/2_DAW/blob/main/DPL/UT3/dpl-tarea-telem/9.png?raw=true)
