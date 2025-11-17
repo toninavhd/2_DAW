@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, Arial, sans-serif;
+    background: #121212;
+    color: white;
+    padding: 30px;
+    padding-bottom: 120px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- TÍTULO --- */
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: white;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.7);
+}
+
+/* --- CONTENEDOR DE CADA CANCIÓN --- */
+.item {
+    position: relative;
+    width: 260px; 
+    height: 260px;
+    margin-bottom: 50px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Cada item entra con un ligero retraso distinto */
+.item:nth-child(1) { animation-delay: 0.1s; }
+.item:nth-child(3) { animation-delay: 0.2s; } 
+.item:nth-child(5) { animation-delay: 0.3s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.item:hover {
+    transform: scale(1.03);
+}
+
+.item.active {
+    box-shadow: 0 0 20px rgba(29, 185, 84, 0.5);
+}
+
+/* --- PORTADAS --- */
+.cover {
+    width: 260px;
+    height: 260px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+    position: relative;
+    z-index: 2;
+}
+
+/* --- IMÁGENES --- */
+.cv1 { background-image: url('../assets/images/chalice.jpg'); }
+.cv2 { background-image: url('../assets/images/choke.jpg'); }
+.cv3 { background-image: url('../assets/images/patch.jpg'); }
+
+.cover.glow {
+    box-shadow: 0 0 30px rgba(29, 185, 84, 0.7);
+    transform: scale(1.05);
+}
+
+/* --- VINILO --- */
+.vinyl {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    width: 220px;
+    height: 220px;
+    background: black;
+    border-radius: 50%;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+
+    z-index: 1;
+    display: flex;
+    justify-content: center;      
+    align-items: center;          
+    
+    transition: transform 0.45s ease-out;
+    transform: translateX(0px);   
+}
+
+/* El disco en sí (es lo que gira) */
+.disc {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #333 0%, #111 45%, #000 100%);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.8), 0 15px 40px rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail {
+    position: relative;
+    width: 80px;                  
+    height: 80px;
+    background: #facc2e;
+    border-radius: 50%;
+    border: 8px solid #ffbf00;    
+}
+
+/* agujero blanco del centro */
+.detail::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 50%;
+}
+
+.playing {
+    transform: translateX(140px) rotate(15deg);
+}
+
+.vinyl.playing .disc {
+    animation: spin 3s linear infinite;
+}
+
+/* Animación de giro */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+/* --- BARRA INFERIOR --- */
+.player-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: #181818;
+    border-top: 1px solid #282828;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.player-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.player-cover-thumb {
+    width: 56px;
+    height: 56px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+}
+
+.player-texts {
+    display: flex;
+    flex-direction: column;
+}
+
+.player-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    margin: 0;
+}
+
+.player-artist {
+    font-size: 12px;
+    color: #b3b3b3;
+    margin: 0;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-toggle {
+    width: 40px;
+    height: 40px;
+    background: #282828;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.player-toggle:hover {
+    background: #3e3e3e;
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+    position: relative;
+}
+
+.icon-play::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid white;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+}
+
+.icon-pause::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3px;
+    height: 12px;
+    background: white;
+    border-radius: 1px;
+}
+
+.icon-pause::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3px;
+    height: 12px;
+    background: white;
+    border-radius: 1px;
+    left: calc(50% + 4px);
+}
+
+.player-progress {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    max-width: 400px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 4px;
+    background: #535353;
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+}
+
+.progress-bar-inner {
+    height: 100%;
+    background: #1db954;
+    border-radius: 2px;
+    width: 0%;
+    transition: width 0.1s ease;
+}
+
+.time {
+    font-size: 11px;
+    color: #b3b3b3;
+    min-width: 35px;
+    text-align: center;
+}
