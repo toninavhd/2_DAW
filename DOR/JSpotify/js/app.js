@@ -14,8 +14,8 @@ const songs = [
     },
 ];
 
-let currentIndex = null;      // Índice de la canción actual
-let audioElements = [];       // Array con { audio, item, vinyl, cover }
+let currentIndex = null;      
+let audioElements = [];      
 
 const playerTitle = document.querySelector(".player-title");
 const playerArtist = document.querySelector(".player-artist");
@@ -25,8 +25,6 @@ const playerIcon = playerToggle.querySelector(".icon");
 const currentTimeEl = document.querySelector(".current-time");
 const totalTimeEl = document.querySelector(".total-time");
 const progressBarInner = document.querySelector(".progress-bar-inner");
-
-// Funciones auxiliares
 
 function formatTime(seconds) {
   if (isNaN(seconds)) return "0:00";
@@ -67,30 +65,76 @@ function pauseAll() {
   setPlayIcon(false);
 }
 
-songs.forEach(config => {
-    const item = document.querySelector(config.itemSelector);
+songs.forEach((songConfig, index) => {
+    const item = document.querySelector(songConfig.itemSelector);
     const cover = item.querySelector(".cover");
     const vinyl = item.querySelector(".vinyl");
-    const audio = new Audio(config.audioPath);
+    const audio = new Audio(songConfig.audioPath);
 
     audioElements.push({ audio, item, vinyl, cover });
 
+    audio.addEventListener('loadedmetadata', () => {
+        totalTimeEl.textContent = formatTime(audio.duration);
+    });
+
+    audio.addEventListener('timeupdate', () => {
+        currentTimeEl.textContent = formatTime(audio.currentTime);
+        totalTimeEl.textContent = formatTime(audio.duration);
+        const progress = (audio.currentTime / audio.duration) * 100;
+        progressBarInner.style.width = `${progress}%`;
+    });
+
+    audio.addEventListener('ended', () => {
+        item.classList.remove("active");
+        vinyl.classList.remove("playing");
+        cover.classList.remove("glow");
+        setPlayIcon(false);
+        progressBarInner.style.width = '0%';
+    });
+
     item.addEventListener("click", () => {
+        if (currentIndex !== index) {
+            currentIndex = index;
+            updateNowPlaying(index);
+        }
 
-        // pausa todas las demás
-        audioElements.forEach(el => {
-            if (el.audio !== audio) el.audio.pause();
-        });
-
-        // toggle play / pause
         if (audio.paused) {
+            pauseAll();
             audio.play();
-            cover.classList.add("glow");
+            item.classList.add("active");
             vinyl.classList.add("playing");
+            cover.classList.add("glow");
+            setPlayIcon(true);
         } else {
             audio.pause();
-            cover.classList.remove("glow");
+            item.classList.remove("active");
             vinyl.classList.remove("playing");
+            cover.classList.remove("glow");
+            setPlayIcon(false);
         }
     });
+});
+
+playerToggle.addEventListener("click", () => {
+    if (currentIndex === null) {
+        currentIndex = 0;
+        updateNowPlaying(0);
+    }
+
+    const { audio, item, vinyl, cover } = audioElements[currentIndex];
+
+    if (audio.paused) {
+        pauseAll();
+        audio.play();
+        item.classList.add("active");
+        vinyl.classList.add("playing");
+        cover.classList.add("glow");
+        setPlayIcon(true);
+    } else {
+        audio.pause();
+        item.classList.remove("active");
+        vinyl.classList.remove("playing");
+        cover.classList.remove("glow");
+        setPlayIcon(false);
+    }
 });

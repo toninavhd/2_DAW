@@ -154,7 +154,7 @@ h1 {
     to   { transform: rotate(360deg); }
 }
 
-/* --- BARRA INFERIOR --- */
+
 .player-bar {
     position: fixed;
     bottom: 0;
