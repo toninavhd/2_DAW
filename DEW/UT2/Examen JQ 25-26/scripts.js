@@ -72,12 +72,14 @@ function renderBooks() {
     books.forEach(book => {
         const li = document.createElement("li");
         li.innerHTML = `
-            <strong class="titulo"> TÍTULO: ${book.titulo}</strong>
-            <span class="autor"> Autor: ${book.autor}</span>
-            <span class="isbn">ISBN: ${book.id}</span>
-            <span class="year">Año: ${book.year}</span>
-            <span class="precio">Precio: ${book.precio.toFixed(2)} €</span>
-            <span class="igic">IGIC (7%): ${book.igic.toFixed(2)} €</span>
+            <li>
+             <strong class="titulo"> TÍTULO: ${book.titulo}</strong>
+             <span class="autor"> Autor: ${book.autor}</span>
+             <span class="isbn">ISBN: ${book.id}</span>
+             <span class="year">Año: ${book.year}</span>
+             <span class="precio"> Precio: <b> ${book.precio.toFixed(2)} € </b></span>
+             <span class="igic"> IGIC (7%): ${book.igic.toFixed(2)} €</span>
+            </li>
         `;
         listaLibros.appendChild(li);
     });
