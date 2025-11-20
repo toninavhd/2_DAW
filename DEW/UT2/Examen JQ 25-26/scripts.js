@@ -20,8 +20,8 @@ const numEjemplares = document.querySelector("#numEjemplares");
 const precioTotal = document.querySelector("#precioTotal");
 
 
-// Apartado B - Recuperacion de datos con fetch
-// apartado del 1 al 3
+// Apartado B el apartado A lo puse abajo
+// apartado del A-1 al A-3
 async function getBooksFromURL(URL_BOOKS) {
     try {
         const resp = await fetch(URL_BOOKS);
@@ -46,7 +46,7 @@ async function getBooksFromURL(URL_BOOKS) {
     }
 }
 
-//apartado 4
+//apartado A-4
 function saveToLocalStorage(arrayBooks) {
     localStorage.setItem("libros", JSON.stringify(arrayBooks));
 }
@@ -104,7 +104,7 @@ function onLimpiarClick() {
     listaLibros.innerHTML = "";
     localStorage.removeItem("libros");
     numEjemplares.textContent = "0";
-    precioTotal.textContent = "0,00 €";
+    precioTotal.textContent = "0.00 €";
     msgError.textContent = "No hay libros guardados";
 }
 
