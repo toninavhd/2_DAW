@@ -20,7 +20,8 @@ const numEjemplares = document.querySelector("#numEjemplares");
 const precioTotal = document.querySelector("#precioTotal");
 
 
-// Apartado B - Iniciar con init()
+// Apartado B - Recuperacion de datos con fetch
+// apartado del 1 al 3
 async function getBooksFromURL(URL_BOOKS) {
     try {
         const resp = await fetch(URL_BOOKS);
@@ -45,6 +46,7 @@ async function getBooksFromURL(URL_BOOKS) {
     }
 }
 
+//apartado 4
 function saveToLocalStorage(arrayBooks) {
     localStorage.setItem("libros", JSON.stringify(arrayBooks));
 }
@@ -54,6 +56,7 @@ function getFromLocalStorage() {
     return data ? JSON.parse(data) : null;
 }
 
+//apartado B-5 y apartado C  
 function renderBooks() {
     const books = getFromLocalStorage();
     if (!books || books.length === 0) {
@@ -63,32 +66,26 @@ function renderBooks() {
         msgError.textContent = "No hay libros guardados";
         return;
     }
+
     msgError.textContent = ""; 
     listaLibros.innerHTML = ""; 
     books.forEach(book => {
         const li = document.createElement("li");
         li.innerHTML = `
-            <strong class="titulo">${book.titulo}</strong>
-            <span class="autor">Autor: ${book.autor}</span>
+            <strong class="titulo"> TÍTULO: ${book.titulo}</strong>
+            <span class="autor"> Autor: ${book.autor}</span>
             <span class="isbn">ISBN: ${book.id}</span>
             <span class="year">Año: ${book.year}</span>
-            <span class="precio">Precio: ${book.precio.toFixed(2).replace('.', ',')} €</span>
-            <span class="igic">IGIC (7%): ${book.igic.toFixed(2).replace('.', ',')} €</span>
+            <span class="precio">Precio: ${book.precio.toFixed(2)} €</span>
+            <span class="igic">IGIC (7%): ${book.igic.toFixed(2)} €</span>
         `;
         listaLibros.appendChild(li);
     });
     numEjemplares.textContent = calculaTotalEjemplares();
-    precioTotal.textContent = calculaPrecioTotal().toFixed(2).replace('.', ',') + " €";
+    precioTotal.textContent = calculaPrecioTotal().toFixed(2) + " €";
 }
 
-function onLimpiarClick() {
-    listaLibros.innerHTML = "";
-    localStorage.removeItem("libros");
-    numEjemplares.textContent = "0";
-    precioTotal.textContent = "0,00 €";
-    msgError.textContent = "No hay libros guardados";
-}
-
+// Apartado D-1 y D-2
 function calculaTotalEjemplares() {
     const books = getFromLocalStorage();
     return books ? books.length : 0;
@@ -100,8 +97,16 @@ function calculaPrecioTotal() {
     return books.reduce((total, book) => total + book.precio, 0);
 }
 
+// Apartado E 
+function onLimpiarClick() {
+    listaLibros.innerHTML = "";
+    localStorage.removeItem("libros");
+    numEjemplares.textContent = "0";
+    precioTotal.textContent = "0,00 €";
+    msgError.textContent = "No hay libros guardados";
+}
 
-// Apartado A - Iniciar con init()
+// Apartado A
 async function init() {
     const books = getFromLocalStorage();
     if (books) {
