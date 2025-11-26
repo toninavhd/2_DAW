@@ -15,7 +15,7 @@ $(document).ready(function() {
     );
 
     // Initialize controls
-    initNavegacion();
+    inicializarControlesNavegacion();
     initProfundidad();
     initSonar();
     initArmas();
@@ -33,7 +33,7 @@ $(document).ready(function() {
     var tipoTorpedo = "estandar";
     var objetivoSeleccionado = null;
 
-    function initNavegacion() {
+    function inicializarControlesNavegacion() {
         $("#velocidad-slider").slider({
             min: 0,
             max: 30,
