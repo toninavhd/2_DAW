@@ -14,14 +14,12 @@ $(document).ready(function() {
         "- Sonar en modo pasivo."
     );
 
-    // Initialize controls
     inicializarControlesNavegacion();
-    initProfundidad();
-    initSonar();
-    initArmas();
-    initEventos();
+    iniciarProfundidad();
+    iniciarSonar();
+    iniciarArmas();
+    iniciarEventos();
 
-    // Variables to store state
     var velocidad = 15;
     var rumbo = 0;
     var pilotoAuto = false;
@@ -64,7 +62,6 @@ $(document).ready(function() {
         });
         $("#rumbo-spinner").spinner("value", rumbo);
 
-        // Pilot auto radio buttons
         $("input[name='piloto']").checkboxradio();
         $("input[name='piloto']").change(function() {
             pilotoAuto = $("input[name='piloto']:checked").val() === "on";
@@ -72,7 +69,7 @@ $(document).ready(function() {
         pilotoAuto = $("input[name='piloto']:checked").val() === "on";
     }
 
-    function initProfundidad() {
+    function iniciarProfundidad() {
         $("#profundidad-slider").slider({
             min: 0,
             max: 500,
@@ -91,9 +88,9 @@ $(document).ready(function() {
         modoSilencio = $("#silencio-check").prop("checked");
     }
 
-    function initSonar() {
-        $("#modo-sonar").selectmenu({
-            change: function(event, data) {
+    function iniciarSonar() {
+        $("#modciar-sonar").selectmenu({
+            chaciarge: function(event, data) {
                 modoSonar = data.item.value;
             }
         });
@@ -113,7 +110,7 @@ $(document).ready(function() {
         $("#btn-escanear").button();
     }
 
-    function initArmas() {
+    function iniciarArmas() {
         $("#torpedos-spinner").spinner({
             min: 0,
             max: 10,
@@ -132,7 +129,7 @@ $(document).ready(function() {
         $("#btn-disparar").button();
     }
 
-    function initEventos() {
+    function iniciarEventos() {
         $("#btn-escanear").click(function() {
             if(modoSonar === "off") {
                 alert("El sonar está apagado. Por favor actívelo para escanear.");
