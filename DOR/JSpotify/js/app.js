@@ -1,4 +1,5 @@
 // Configuración de las canciones
+// con las rutas relativas
 const songs = [
     {
         itemSelector: ".item-1",
@@ -14,9 +15,13 @@ const songs = [
     },
 ];
 
-let currentIndex = null;      
+//inicializamos las variables 
+let currentIndex = null;  
+// aqui guardamos la información del audio    
 let audioElements = [];      
 
+
+//elementos de la barra inferior se guardan aqui para mostrarse mas adelante. Usa querySelector
 const playerTitle = document.querySelector(".player-title");
 const playerArtist = document.querySelector(".player-artist");
 const playerCoverThumb = document.querySelector(".player-cover-thumb");
@@ -26,8 +31,9 @@ const currentTimeEl = document.querySelector(".current-time");
 const totalTimeEl = document.querySelector(".total-time");
 const progressBarInner = document.querySelector(".progress-bar-inner");
 
+//funcion del tiempo
 function formatTime(seconds) {
-  if (isNaN(seconds)) return "0:00";
+  if (isNaN(seconds)) return "0:00"; //si seconds no es valido es 0.00
   const m = Math.floor(seconds / 60);
   const s = Math.floor(seconds % 60);
   return `${m}:${s.toString().padStart(2, "0")}`;
