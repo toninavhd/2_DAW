@@ -1,0 +1,32 @@
+div.container{
+    background-color: coral;
+    color: azure;
+    height: 300px;
+    text-align: center;
+}
+
+div.container-fluid{
+    background-color:burlywood;
+    height: 300px;
+
+}
+
+.pink{
+    background-color: palevioletred;
+}
+
+.green{
+    background-color: khaki;
+}
+
+.blue{
+    background-color: aquamarine;
+}
+
+.red{
+    background-color: rgb(252, 113, 140);
+}
+
+.yellow{
+    background-color: gold;
+}
