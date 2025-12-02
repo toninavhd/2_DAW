@@ -83,6 +83,7 @@ songs.forEach((songConfig, index) => {
         totalTimeEl.textContent = formatTime(audio.duration);
     });
 
+
     audio.addEventListener('timeupdate', () => {
         currentTimeEl.textContent = formatTime(audio.currentTime);
         totalTimeEl.textContent = formatTime(audio.duration);
