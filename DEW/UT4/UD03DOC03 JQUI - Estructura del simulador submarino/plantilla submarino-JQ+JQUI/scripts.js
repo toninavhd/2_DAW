@@ -25,7 +25,7 @@ $(document).ready(function() {
     var pilotoAuto = false;
     var profundidad = 100;
     var modoSilencio = false;
-    var modoSonar = "off";
+    var modoSonar = "pasivo";
     var alcanceSonar = 500;
     var torpedosListos = 3;
     var tipoTorpedo = "estandar";
