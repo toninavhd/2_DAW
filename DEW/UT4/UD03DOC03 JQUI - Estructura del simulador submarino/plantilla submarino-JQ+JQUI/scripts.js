@@ -213,18 +213,16 @@ $(document).ready(function() {
     }
 
     function mostrarBarcosEnArmasObjetivo() {
-        // Vaciar el selectmenu antes de añadir nuevas opciones para evitar duplicados
         $("#seleccionar-objetivo").empty();
         console.log("Cargando barcos en el selectmenu Objetivo...");
 
-        // Recuperar todos los barcos dentro de #sonar y crear opciones
         $("#sonar").find(".barco").each(function() {
             var id = $(this).data("id");
             console.log("Añadiendo barco con ID: " + id);
             $("#seleccionar-objetivo").append('<option value="' + id + '">' + id + '</option>');
         });
 
-        // Refrescar y habilitar el selectmenu
+
         $("#seleccionar-objetivo").selectmenu("refresh");
         $("#seleccionar-objetivo").selectmenu("enable");
         console.log("Selectmenu Objetivo actualizado y habilitado.");
