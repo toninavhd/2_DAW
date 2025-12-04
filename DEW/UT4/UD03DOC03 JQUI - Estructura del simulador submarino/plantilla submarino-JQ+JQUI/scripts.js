@@ -125,6 +125,14 @@ $(document).ready(function() {
         });
         tipoTorpedo = $("#tipo-torpedo").val();
 
+        $("#seleccionar-objetivo").selectmenu({
+            select: function(event, ui) {
+                $(".barco").removeClass("barco-seleccionado");
+                $(".barco[data-id='" + ui.item.value + "']").addClass("barco-seleccionado");
+            }
+        });
+        $("#seleccionar-objetivo").selectmenu("disable");
+
         $("#btn-fijar-objetivo").button();
         $("#btn-disparar").button();
     }
@@ -136,6 +144,7 @@ $(document).ready(function() {
                 return;
             }
             alert("Escaneando modo " + modoSonar + " con alcance " + alcanceSonar + " m.");
+            mostrarBarcosEnArmasObjetivo();
         });
 
         $("#sonar").on("click", ".barco", function() {
@@ -210,5 +219,15 @@ $(document).ready(function() {
 
             alert("Configuración restablecida a valores predeterminados.");
         });
+    }
+
+    function mostrarBarcosEnArmasObjetivo() {
+        $("#seleccionar-objetivo").empty();
+        $("#sonar .barco").each(function() {
+            var id = $(this).data("id");
+            $("#seleccionar-objetivo").append('<option value="' + id + '">' + id + '</option>');
+        });
+        $("#seleccionar-objetivo").selectmenu("refresh");
+        $("#seleccionar-objetivo").selectmenu("enable");
     }
 });

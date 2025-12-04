@@ -163,6 +163,11 @@ h2 {
   box-shadow: 0 0 10px #f97373;
 }
 
+.barco-seleccionado {
+  background: #f97373; /* rojo */
+  box-shadow: 0 0 10px #f97373;
+}
+
 /* Ajustes menores para jQuery UI dentro del tema oscuro */
 
 .ui-widget-content {

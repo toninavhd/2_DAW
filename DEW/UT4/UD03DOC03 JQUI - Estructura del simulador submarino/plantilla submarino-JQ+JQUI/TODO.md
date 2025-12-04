@@ -1,0 +1,7 @@
+- [x] Add selectmenu "Objetivo" in HTML under "Tipo torpedo" in tab-armas
+- [x] Add CSS class .barco-seleccionado for highlighting selected ship
+- [x] Initialize selectmenu in scripts.js, disabled initially
+- [x] Modify btn-escanear click to call mostrarBarcosEnArmasObjetivo()
+- [x] Define mostrarBarcosEnArmasObjetivo() to populate selectmenu with ship options
+- [x] Add selectmenuselect event to highlight selected ship
+- [x] Test the functionality
