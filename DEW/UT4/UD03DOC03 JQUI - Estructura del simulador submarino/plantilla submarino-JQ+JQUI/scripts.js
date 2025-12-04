@@ -1,11 +1,5 @@
-// Simplified JS + jQuery code for submarine simulator
-// Suitable for 2ºDAW student level
-
 $(document).ready(function() {
-    // Initialize basic tabs from jQuery UI
     $("#tabs-mandos").tabs();
-
-    // Initialize mission text
     $("#texto-mision").text(
         "Misión 1: Configura el submarino en modo patrulla silenciosa.\n" +
         "- Velocidad moderada.\n" +
@@ -107,7 +101,12 @@ $(document).ready(function() {
         });
         $("#alcance-sonar-valor").text(alcanceSonar);
 
-        $("#btn-escanear").button();
+        $("#btn-escanear").button().on("click", function () { 
+            $(".barco").hide();
+            $(".barco").fadeIn(4000);
+            
+            mostrarBarcosEnArmasObjetivo();
+        });
     }
 
     function iniciarArmas() {
@@ -223,7 +222,7 @@ $(document).ready(function() {
 
     function mostrarBarcosEnArmasObjetivo() {
         $("#seleccionar-objetivo").empty();
-        $("#sonar .barco").each(function() {
+        $("#sonar").find(".barco").each(function() {
             var id = $(this).data("id");
             $("#seleccionar-objetivo").append('<option value="' + id + '">' + id + '</option>');
         });
@@ -231,3 +230,4 @@ $(document).ready(function() {
         $("#seleccionar-objetivo").selectmenu("enable");
     }
 });
+

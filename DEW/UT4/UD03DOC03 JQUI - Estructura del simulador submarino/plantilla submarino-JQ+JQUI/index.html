@@ -4,7 +4,6 @@
         <meta charset="UTF-8" />
         <title>Simulador de Submarino - Prototipo</title>
 
-        <!-- jQuery UI (tema base) -->
         <link
             rel="stylesheet"
             href="https://code.jquery.com/ui/1.14.1/themes/trontastic/jquery-ui.css" />
@@ -18,22 +17,18 @@
         </header>
 
         <main class="layout">
-            <!-- PANTALLA DE SONAR (izquierda) -->
             <section class="panel-sonar">
                 <h2>Pantalla de sonar</h2>
                 <div id="sonar">
-                    <!-- Barcos de ejemplo (se pueden ocultar por CSS al principio) -->
                     <div class="barco" data-id="b1"></div>
                     <div class="barco" data-id="b2"></div>
                     <div class="barco" data-id="b3"></div>
                 </div>
             </section>
 
-            <!-- PANEL DE MANDOS (derecha) -->
             <section class="panel-mandos">
                 <h2>Panel de mandos</h2>
 
-                <!-- TABS PRINCIPALES -->
                 <div id="tabs-mandos">
                     <ul>
                         <li><a href="#tab-navegacion">Navegación</a></li>
@@ -42,12 +37,10 @@
                         <li><a href="#tab-armas">Armas</a></li>
                     </ul>
 
-                    <!-- TAB NAVEGACIÓN -->
                     <div id="tab-navegacion">
                         <div class="control">
                             <label for="velocidad-slider">Velocidad
                                 (nudos)</label>
-                            <!-- Aquí irá el slider de jQuery UI -->
                             <div id="velocidad-slider"
                                 class="slider-placeholder"></div>
                             <span id="velocidad-valor"
@@ -56,13 +49,11 @@
 
                         <div class="control">
                             <label for="rumbo-spinner">Rumbo (°)</label>
-                            <!-- Aquí irá el spinner de jQuery UI -->
                             <input id="rumbo-spinner" type="text" />
                         </div>
 
                         <fieldset class="control">
                             <legend>Piloto automático</legend>
-                            <!-- Se convertirá a checkboxradio de jQuery UI -->
                             <label for="piloto-on">
                                 <input
                                     type="radio"
@@ -83,12 +74,10 @@
                         </fieldset>
                     </div>
 
-                    <!-- TAB PROFUNDIDAD -->
                     <div id="tab-profundidad">
                         <div class="control">
                             <label for="profundidad-slider">Profundidad
                                 (m)</label>
-                            <!-- Aquí irá el slider de jQuery UI -->
                             <div id="profundidad-slider"
                                 class="slider-placeholder"></div>
                             <span id="profundidad-valor"
@@ -97,7 +86,6 @@
 
                         <fieldset class="control">
                             <legend>Modo silencio</legend>
-                            <!-- Se convertirá a checkboxradio de jQuery UI -->
                             <label for="silencio-check">
                                 <input type="checkbox" id="silencio-check" />
                                 Activar modo silencio
@@ -105,7 +93,6 @@
                         </fieldset>
                     </div>
 
-                    <!-- TAB SONAR -->
                     <div id="tab-sonar">
                         <div class="control">
                             <label for="modo-sonar">Modo de sonar</label>
@@ -120,7 +107,6 @@
                         <div class="control">
                             <label for="alcance-sonar-slider">Alcance del
                                 sonar</label>
-                            <!-- Aquí irá el slider de jQuery UI -->
                             <div
                                 id="alcance-sonar-slider"
                                 class="slider-placeholder"></div>
@@ -133,18 +119,15 @@
                         </div>
                     </div>
 
-                    <!-- TAB ARMAS -->
                     <div id="tab-armas">
                         <div class="control">
                             <label for="torpedos-spinner">Torpedos
                                 listos</label>
-                            <!-- Se convertirá a spinner de jQuery UI -->
                             <input id="torpedos-spinner" type="text" />
                         </div>
 
                         <div class="control">
                             <label for="tipo-torpedo">Tipo de torpedo</label>
-                            <!-- Se convertirá a selectmenu de jQuery UI -->
                             <select id="tipo-torpedo">
                                 <option value="estandar">Estándar</option>
                                 <option value="silencioso">Silencioso</option>
@@ -189,14 +172,12 @@
 
         </main>
 
-        <!-- DIÁLOGO GENÉRICO PARA MENSAJES -->
         <div id="dialog-mensaje" title="Mensaje" style="display: none;">
             <p id="dialog-texto">
                 Aquí aparecerán los mensajes de misión, errores, etc.
             </p>
         </div>
 
-        <!-- jQuery + jQuery UI + tu script -->
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script
             src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>

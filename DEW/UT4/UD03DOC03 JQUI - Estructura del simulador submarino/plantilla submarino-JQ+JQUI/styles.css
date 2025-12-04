@@ -136,11 +136,10 @@ h2 {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #4ade80; /* verde */
+  background: #4ade80; 
   box-shadow: 0 0 8px #4ade80;
 }
 
-/* Posiciones de ejemplo (puedes cambiarlas) */
 .barco[data-id="b1"] {
   top: 20%;
   left: 65%;
@@ -156,19 +155,16 @@ h2 {
   left: 80%;
 }
 
-/* Barco seleccionado (para sesiones de selección/disparo) */
-
 .barco.seleccionado {
-  background: #f97373; /* rojo */
+  background: #f97373;
   box-shadow: 0 0 10px #f97373;
 }
 
 .barco-seleccionado {
-  background: #f97373; /* rojo */
+  background: #f97373;
   box-shadow: 0 0 10px #f97373;
 }
 
-/* Ajustes menores para jQuery UI dentro del tema oscuro */
 
 .ui-widget-content {
   background: #1a233a;
@@ -187,7 +183,6 @@ h2 {
   margin-top: 0.25rem;
 }
 
-/* Diálogo */
 
 #dialog-mensaje {
   font-size: 0.95rem;
