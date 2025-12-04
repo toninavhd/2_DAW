@@ -11,7 +11,7 @@ $(document).ready(function() {
     inicializarControlesNavegacion();
     iniciarProfundidad();
     iniciarSonar();
-    iniciarArmas();
+    inicializarControlesArmas();
     iniciarEventos();
 
     var velocidad = 15;
@@ -101,10 +101,16 @@ $(document).ready(function() {
         });
         $("#alcance-sonar-valor").text(alcanceSonar);
 
-        $("#btn-escanear").button();
+        $("#btn-escanear")
+            .button()
+            .on("click", function () {
+                $(".barco").hide();
+                $(".barco").fadeIn(4000);
+                mostrarBarcosEnArmasObjetivo();
+            });
     }
 
-    function iniciarArmas() {
+    function inicializarControlesArmas() {
         $("#torpedos-spinner").spinner({
             min: 0,
             max: 10,
@@ -132,19 +138,6 @@ $(document).ready(function() {
     }
 
     function iniciarEventos() {
-        $("#btn-escanear").click(function() {
-            if(modoSonar === "off") {
-                alert("El sonar está apagado. Por favor actívelo para escanear.");
-                return;
-            }
-            if(modoSonar === "pasivo" && alcanceSonar === 500) {
-                alert("Escaneando en modo pasivo estándar con alcance de 500 metros.");
-            } else {
-                alert("Escaneando en modo " + modoSonar + " con alcance de " + alcanceSonar + " metros.");
-            }
-            mostrarBarcosEnArmasObjetivo();
-        });
-
         $("#sonar").on("click", ".barco", function() {
             $(".barco").removeClass("seleccionado");
             $(this).addClass("seleccionado");
