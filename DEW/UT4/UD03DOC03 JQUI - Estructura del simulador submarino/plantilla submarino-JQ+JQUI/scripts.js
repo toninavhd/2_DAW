@@ -101,12 +101,7 @@ $(document).ready(function() {
         });
         $("#alcance-sonar-valor").text(alcanceSonar);
 
-        $("#btn-escanear").button().on("click", function () { 
-            $(".barco").hide();
-            $(".barco").fadeIn(4000);
-            
-            mostrarBarcosEnArmasObjetivo();
-        });
+        $("#btn-escanear").button();
     }
 
     function iniciarArmas() {
@@ -124,13 +119,13 @@ $(document).ready(function() {
         });
         tipoTorpedo = $("#tipo-torpedo").val();
 
-        $("#seleccionar-objetivo").selectmenu({
-            select: function(event, ui) {
-                $(".barco").removeClass("barco-seleccionado");
-                $(".barco[data-id='" + ui.item.value + "']").addClass("barco-seleccionado");
-            }
-        });
+        $("#seleccionar-objetivo").selectmenu();
         $("#seleccionar-objetivo").selectmenu("disable");
+
+        $("#seleccionar-objetivo").on("selectmenuselect", function(event, ui) {
+            $(".barco").removeClass("barco-seleccionado");
+            $(".barco[data-id='" + ui.item.value + "']").addClass("barco-seleccionado");
+        });
 
         $("#btn-fijar-objetivo").button();
         $("#btn-disparar").button();
@@ -142,7 +137,11 @@ $(document).ready(function() {
                 alert("El sonar está apagado. Por favor actívelo para escanear.");
                 return;
             }
-            alert("Escaneando modo " + modoSonar + " con alcance " + alcanceSonar + " m.");
+            if(modoSonar === "pasivo" && alcanceSonar === 500) {
+                alert("Escaneando en modo pasivo estándar con alcance de 500 metros.");
+            } else {
+                alert("Escaneando en modo " + modoSonar + " con alcance de " + alcanceSonar + " metros.");
+            }
             mostrarBarcosEnArmasObjetivo();
         });
 
@@ -221,13 +220,20 @@ $(document).ready(function() {
     }
 
     function mostrarBarcosEnArmasObjetivo() {
+        // Vaciar el selectmenu antes de añadir nuevas opciones para evitar duplicados
         $("#seleccionar-objetivo").empty();
+        console.log("Cargando barcos en el selectmenu Objetivo...");
+
+        // Recuperar todos los barcos dentro de #sonar y crear opciones
         $("#sonar").find(".barco").each(function() {
             var id = $(this).data("id");
+            console.log("Añadiendo barco con ID: " + id);
             $("#seleccionar-objetivo").append('<option value="' + id + '">' + id + '</option>');
         });
+
+        // Refrescar y habilitar el selectmenu
         $("#seleccionar-objetivo").selectmenu("refresh");
         $("#seleccionar-objetivo").selectmenu("enable");
+        console.log("Selectmenu Objetivo actualizado y habilitado.");
     }
 });
-
