@@ -3,32 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ejercicio 4</title>
+    <title>Ejercicio 3</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .col-item { padding: 20px; margin-bottom: 10px; border: 1px solid #333; text-align: center; }
-        .a { background-color: #ff9999; }
-        .b { background-color: #99ff99; }
-        .c { background-color: #9999ff; }
-        .d { background-color: #ffff99; }
-        .e { background-color: #ff99ff; }
-        .f { background-color: #99ffff; }
-        .g { background-color: #ffcc99; }
-        .h { background-color: #cccccc; }
+        .seccion {
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 15px;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .a { background-color: yellow; color: black; } 
+        .b { background-color: #2ecc71; } 
+        .c { background-color: #3498db; } 
+        .d { background-color: #9b59b6; } 
+        .e { background-color: #f1c40f; } 
+        .f { background-color: #83a7fc; }
+        .g { background-color: #5df1c5; }
+        .h { background-color: #e74c3c; }
     </style>
 </head>
 <body>
     <div class="container mt-4">
-        <h3>Ejercicio 4</h3>
         <div class="row">
-            <div class="col-lg-3 col-md-4 col-sm-6 col-item a">A</div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-item b">B</div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-item c">C</div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-item d">D</div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-item e">E</div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-item f">F</div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-item g">G</div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-item h">H</div>
+            <div class="col-12 seccion a">A</div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-4 seccion b">B</div>
+                    <div class="col-4 seccion c">C</div>
+                    <div class="col-4 seccion d">D</div>
+                    <div class="col-4 seccion e">E</div>
+                    <div class="col-4 seccion f">F</div>
+                    <div class="col-4 seccion g">G</div>
+                </div>
+            </div>
+            <div class="col-md-4 seccion h">H</div>
         </div>
     </div>
 </body>
