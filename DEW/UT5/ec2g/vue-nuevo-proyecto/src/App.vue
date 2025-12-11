@@ -1,3 +1,4 @@
+
 <template>
   <div id="app">
     <header class="app-header">
@@ -6,12 +7,19 @@
     </header>
     
     <main class="app-main">
-      <div class="card">
-        <h2>Bienvenido</h2>
-        <p>Esta es una aplicación Vue.js con SFC (Single File Components), Composition API y TypeScript.</p>
-        <button @click="incrementCounter" class="btn">
-          Contador: {{ counter }}
-        </button>
+      <div class="grid">
+        <div class="card">
+          <h2>Contador</h2>
+          <p>Ejemplo de estado reactivo con TypeScript</p>
+          <button @click="incrementCounter" class="btn">
+            Contador: {{ counter }}
+          </button>
+        </div>
+
+        <TodoApp 
+          title="Mi Lista de Tareas"
+          :max-tasks="5"
+        />
       </div>
     </main>
   </div>
@@ -19,6 +27,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import TodoApp from './components/TodoApp.vue'
 
 // TypeScript interface para tipado
 interface Props {
