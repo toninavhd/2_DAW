@@ -1,8 +1,0 @@
-- [x] Update body background to #121212 and add bottom padding for fixed player bar
-- [x] Refine .disc with darker radial-gradient and stronger box-shadow
-- [x] Add .item.active class with greenish box-shadow
-- [x] Add .cover.glow class with green shadows and slight scale
-- [x] Add styles for .player-bar (fixed bottom, #181818 bg, border, shadow)
-- [x] Add styles for .player-info, .player-cover-thumb, .player-texts, .player-title, .player-artist
-- [x] Add styles for .player-controls, .player-toggle, .icon, .icon-play, .icon-pause
-- [x] Add styles for .player-progress, .progress-bar, .progress-bar-inner, .time
