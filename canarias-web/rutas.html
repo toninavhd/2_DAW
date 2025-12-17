@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canarias - Rutas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="img/pdc-logo.png" alt="Escudo de Canarias" width="20" height="30" class="me-2">
+                <span class="fw-bold">Canarias</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Portada</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="deportes.html">Deportes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="rutas.html">Rutas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contáctanos</a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center me-3">
+                    <svg class="text-warning me-2" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                    </svg>
+                    <svg class="text-warning" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                    </svg>
+                </div>
+                
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <nav aria-label="breadcrumb" class="ms-3 mt-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Portada</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Rutas</li>
+        </ol>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <h1 class="mb-4">Rutas de Canarias</h1>
+        
+        <div class="row" data-masonry='{"percentPosition": true}'>
+            
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card">
+                    <img src="img/rutas-teide.jpg" class="card-img-top" alt="Ruta del Teide">
+                    <div class="card-body">
+                        <h5 class="card-title">Ascensión al Teide</h5>
+                        <p class="card-text">La ruta más emblemática de Canarias. Ascensión al pico más alto de España con vistas espectaculares de las islas.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-primary">Difícil</span>
+                            <small class="text-muted">8-10 horas</small>
+                        </div>
+                        <a href="#" class="btn btn-primary mt-2">Ver ruta</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card border-success">
+                    <img src="img/rutas-barranco-las-vacas.jpg" class="card-img-top" alt="Barranco Las Vacas">
+                    <div class="card-body">
+                        <h5 class="card-title text-success">Barranco Las Vacas</h5>
+                        <p class="card-text">Una ruta surrealista que te transporta a otro planeta con sus formaciones rocosas únicas.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success">Fácil</span>
+                            <small class="text-muted">2-3 horas</small>
+                        </div>
+                        <a href="#" class="btn btn-success mt-2">Explorar</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card">
+                    <img src="img/rutas-marcos-cordero.jpg" class="card-img-top" alt="Ruta Marcos y Cordero">
+                    <div class="card-body">
+                        <h5 class="card-title">Los Barros</h5>
+                        <p class="card-text">Ruta de senderismo que conecta los barrancos de Marcos y Cordero, perfecta para observar la flora endémica.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-warning">Moderada</span>
+                            <small class="text-muted">4-5 horas</small>
+                        </div>
+                        <a href="#" class="btn btn-warning mt-2">Descubre</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-6 mb-4">
+                <div class="card bg-dark text-white">
+                    <img src="img/rutas-afur.jpg" class="card-img-top" alt="Afur">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Barranco de Afur</h5>
+                        <p class="card-text">Una de las rutas más hermosas de Tenerife, con un paisaje que combina selva tropical y acantilados.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-info">Natural</span>
+                            <small class="text-light">6-7 horas</small>
+                        </div>
+                        <a href="#" class="btn btn-info mt-2">Planificar</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-6 mb-4">
+                <div class="card border-warning">
+                    <img src="img/rutas-mil-ventanas.jpg" class="card-img-top" alt="Mil Ventanas">
+                    <div class="card-body">
+                        <h5 class="card-title text-warning">Cañón de Las Mil Ventanas</h5>
+                        <p class="card-text">Un sendero espectacular que atraviesa un cañón con formaciones rocosas únicas y ventanas naturales.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-warning">Moderada-Difícil</span>
+                            <small class="text-muted">5-6 horas</small>
+                        </div>
+                        <a href="#" class="btn btn-outline-warning mt-2">Reservar</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 mb-4">
+                <div class="card border-danger">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="img/rutas-volcanes.jpg" class="img-fluid rounded-start" alt="Ruta de los Volcanes">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title text-danger">Ruta de los Volcanes</h5>
+                                <p class="card-text">Una aventura única por el paisaje volcánico de La Palma, explorando cráteres y coladas de lava solidificada.</p>
+                                <ul class="list-unstyled">
+                                    <li><strong>Dificultad:</strong> Alta</li>
+                                    <li><strong>Duración:</strong> Todo el día</li>
+                                    <li><strong>Distancia:</strong> 15 km</li>
+                                </ul>
+                                <a href="#" class="btn btn-danger">Reservar aventura</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elem = document.querySelector('.row');
+            var msnry = new Masonry(elem, {
+                itemSelector: '.col-sm-6',
+                percentPosition: true
+            });
+        });
+    </script>
+</body>
+</html>
+
