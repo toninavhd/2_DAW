@@ -1,0 +1,51 @@
+{
+  "about": {
+    "name": "Tu Nombre",
+    "title": "Desarrollador Web",
+    "description": "Descripción sobre ti, tus intereses y objetivos profesionales."
+  },
+  "skills": [
+    "JavaScript",
+    "TypeScript",
+    "Vue.js",
+    "React",
+    "Node.js",
+    "HTML/CSS",
+    "Python",
+    "SQL"
+  ],
+  "projects": [
+    {
+      "name": "Proyecto 1",
+      "description": "Descripción del proyecto 1.",
+      "technologies": ["Vue.js", "TypeScript", "PrimeVue"],
+      "link": "https://github.com/tuusuario/proyecto1"
+    },
+    {
+      "name": "Proyecto 2",
+      "description": "Descripción del proyecto 2.",
+      "technologies": ["React", "Node.js", "MongoDB"],
+      "link": "https://github.com/tuusuario/proyecto2"
+    }
+  ],
+  "experience": [
+    {
+      "position": "Desarrollador Frontend",
+      "company": "Empresa XYZ",
+      "period": "2022 - Presente",
+      "description": "Desarrollo de aplicaciones web utilizando Vue.js y TypeScript."
+    },
+    {
+      "position": "Desarrollador Junior",
+      "company": "Empresa ABC",
+      "period": "2020 - 2022",
+      "description": "Mantenimiento y desarrollo de aplicaciones web con JavaScript y PHP."
+    }
+  ],
+  "contact": {
+    "email": "tuemail@example.com",
+    "phone": "+34 123 456 789",
+    "linkedin": "https://linkedin.com/in/tuusuario",
+    "github": "https://github.com/tuusuario"
+  }
+}
