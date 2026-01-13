@@ -228,34 +228,34 @@ const currentProject = computed(() => projects[currentSlide.value]);
             class="bg-[#ffde00] text-black p-8 hover:bg-white transition-colors duration-300 group"
           >
             <span class="text-sm font-bold uppercase tracking-wider text-black/60 mb-2 block">EMAIL</span>
-            <span class="text-xl font-bold uppercase tracking-wide group-hover:text-black">ANTONIO@EMAIL.COM</span>
+            <span class="text-xl font-bold uppercase tracking-wide group-hover:text-black">TONINAVHD@EMAIL.COM</span>
           </a>
           
           <a 
-            href="https://github.com/antonio" 
+            href="https://github.com/toninavhd" 
             target="_blank"
             class="bg-[#ff2a2a] text-white p-8 hover:bg-white hover:text-[#ff2a2a] transition-colors duration-300 group"
           >
             <span class="text-sm font-bold uppercase tracking-wider text-white/60 mb-2 block">GITHUB</span>
-            <span class="text-xl font-bold uppercase tracking-wide group-hover:text-[#ff2a2a]">GITHUB.COM/ANTONIO</span>
+            <span class="text-xl font-bold uppercase tracking-wide group-hover:text-[#ff2a2a]">GITHUB.COM/TONINAVHD</span>
           </a>
           
           <a 
-            href="https://linkedin.com/in/antonio" 
+            href="https://soundcloud.com/uloee" 
             target="_blank"
             class="bg-[#0066ff] text-white p-8 hover:bg-white hover:text-[#0066ff] transition-colors duration-300 group"
           >
-            <span class="text-sm font-bold uppercase tracking-wider text-white/60 mb-2 block">LINKEDIN</span>
-            <span class="text-xl font-bold uppercase tracking-wide group-hover:text-[#0066ff]">LINKEDIN.COM/IN/ANTONIO</span>
+            <span class="text-sm font-bold uppercase tracking-wider text-white/60 mb-2 block">SOUNDCLOUD</span>
+            <span class="text-xl font-bold uppercase tracking-wide group-hover:text-[#0066ff]">@ULOEE</span>
           </a>
           
           <a 
-            href="https://twitter.com/antonio" 
+            href="https://tumblr.com/uloe999" 
             target="_blank"
             class="bg-[#00ff66] text-black p-8 hover:bg-white transition-colors duration-300 group"
           >
-            <span class="text-sm font-bold uppercase tracking-wider text-black/60 mb-2 block">TWITTER</span>
-            <span class="text-xl font-bold uppercase tracking-wide group-hover:text-black">@ANTONIO</span>
+            <span class="text-sm font-bold uppercase tracking-wider text-black/60 mb-2 block">TUMBLR</span>
+            <span class="text-xl font-bold uppercase tracking-wide group-hover:text-black">@ULOE999</span>
           </a>
         </div>
       </div>
