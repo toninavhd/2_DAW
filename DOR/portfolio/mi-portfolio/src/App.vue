@@ -250,7 +250,7 @@ const currentProject = computed(() => projects[currentSlide.value]);
           </a>
           
           <a 
-            href="https://tumblr.com/uloe999" 
+            href="https://uloe999.tumblr.com/" 
             target="_blank"
             class="bg-[#00ff66] text-black p-8 hover:bg-white transition-colors duration-300 group"
           >
