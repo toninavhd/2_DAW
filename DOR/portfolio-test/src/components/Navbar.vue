@@ -42,7 +42,7 @@
 </template>
 
 <script setup lang="ts">
-// Navbar con estilo PS3 Home
+// Navbar 
 </script>
 
 <style scoped>

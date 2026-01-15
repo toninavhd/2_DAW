@@ -10,7 +10,7 @@ const projects = [
   },
   { 
     title: 'PROYECTO_02', 
-    description: 'Fullstack JavaScript · Node.js · MongoDB',
+    description: 'Java · Processing · MongoDB',
     color: 'bg-[#ff2a2a] text-white'
   },
   { 
@@ -109,17 +109,17 @@ const currentProject = computed(() => projects[currentSlide.value]);
               DESARROLLADOR FRONTEND ESPECIALIZADO EN CREAR EXPERIENCIAS WEB MODERNAS Y ACCESIBLES.
             </p>
             <p class="text-lg text-gray-400 uppercase tracking-wide mb-6">
-              ME PASSIONA VUE.JS, TAILWIND CSS Y TYPECRIPT. CREE INTERFACES LIMPIAS, FUNCIONALES Y ESTÉTICAS.
+              ME APASIONA VUE.JS, TAILWIND CSS Y TYPESCRIPT. CREAR INTERFACES LIMPIAS, FUNCIONALES Y ESTÉTICAS.
             </p>
           </div>
           
           <div class="grid grid-cols-2 gap-4 animate-fade-in" style="animation-delay: 0.2s;">
             <div class="bg-[#ffde00] text-black p-6">
-              <span class="text-4xl font-bold block mb-2">3+</span>
+              <span class="text-4xl font-bold block mb-2">1+</span>
               <span class="text-sm uppercase tracking-wider">AÑOS EXP</span>
             </div>
             <div class="bg-[#ff2a2a] text-white p-6">
-              <span class="text-4xl font-bold block mb-2">20+</span>
+              <span class="text-4xl font-bold block mb-2">10+</span>
               <span class="text-sm uppercase tracking-wider">PROYECTOS</span>
             </div>
             <div class="bg-[#0066ff] text-white p-6">
@@ -273,7 +273,7 @@ const currentProject = computed(() => projects[currentSlide.value]);
           </div>
           
           <p class="text-gray-500 uppercase tracking-wider text-sm">
-            © 2025 — TODOS LOS DERECHOS RESERVADOS
+            © 2026 — TODOS LOS DERECHOS RESERVADOS
           </p>
           
           <a 

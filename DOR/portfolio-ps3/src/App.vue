@@ -15,15 +15,15 @@ const setCategory = (index: number) => {
 };
 
 const stats = [
-  { number: '3+', label: 'AÑOS EXP' },
-  { number: '20+', label: 'PROYECTOS' },
+  { number: '1+', label: 'AÑOS EXP' },
+  { number: '10+', label: 'PROYECTOS' },
   { number: '100%', label: 'DEDICACIÓN' },
   { number: '∞', label: 'PASIÓN' }
 ];
 
 const projects = [
   { title: 'PROYECTO_01', description: 'Vue · Tailwind · TypeScript' },
-  { title: 'PROYECTO_02', description: 'Node.js · MongoDB' },
+  { title: 'PROYECTO_02', description: 'Processing · JavaScript' },
   { title: 'PROYECTO_03', description: 'React · Redux' },
   { title: 'PROYECTO_04', description: 'Stripe · Firebase' },
   { title: 'PROYECTO_05', description: 'Chart.js · Express' },
@@ -31,13 +31,12 @@ const projects = [
 ];
 
 const contactItems = [
-  { label: 'EMAIL', value: 'antonio@email.com', href: 'mailto:antonio@email.com' },
-  { label: 'GITHUB', value: 'github.com/antonio', href: 'https://github.com/antonio' },
+  { label: 'EMAIL', value: 'antonio@email.com', href: 'mailto:toninavhd@gmail.com' },
+  { label: 'GITHUB', value: 'github.com/antonio', href: 'https://github.com/toninavhd' },
   { label: 'LINKEDIN', value: 'linkedin.com/in/antonio', href: 'https://linkedin.com/in/antonio' },
-  { label: 'TWITTER', value: '@antonio', href: 'https://twitter.com/antonio' }
+  { label: 'TUMBLR', value: '@uloe999', href: 'https://uloe999.tumblr.com/' }
 ];
 
-// Generate particles on mount
 const particles = ref<Array<{left: string, animationDelay: string, animationDuration: string}>>([]);
 
 onMounted(() => {
@@ -163,9 +162,6 @@ onMounted(() => {
       <div class="footer-name">ANTONIO NAVARRO</div>
       <div class="footer-copyright">© 2025</div>
     </div>
-
-    <!-- Navigation Hint -->
-    <div class="nav-hint">← → NAVEGAR</div>
   </div>
 </template>
 
