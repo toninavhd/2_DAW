@@ -19,13 +19,14 @@ const props = defineProps<Props>()
 
 // Colores vibrantes para las etiquetas de tecnologías
 const techColors = [
-  'bg-brutal-yellow text-brutal-black',
-  'bg-brutal-blue text-white',
-  'bg-brutal-red text-white',
-  'bg-brutal-green text-brutal-black',
-  'bg-brutal-orange text-white',
-  'bg-brutal-purple text-white',
-  'bg-brutal-pink text-white',
+  'bg-brutal-yellow text-black border-brutal-black',
+  'bg-brutal-blue text-white border-brutal-black',
+  'bg-brutal-red text-white border-brutal-black',
+  'bg-brutal-green text-black border-brutal-black',
+  'bg-brutal-orange text-white border-brutal-black',
+  'bg-brutal-pink text-white border-brutal-black',
+  'bg-brutal-cyan text-black border-brutal-black',
+  'bg-brutal-magenta text-white border-brutal-black',
 ]
 
 const getTechColor = (index: number): string => {
@@ -35,16 +36,19 @@ const getTechColor = (index: number): string => {
 
 <template>
   <article
-    class="bg-brutal-white border-3 border-brutal-black shadow-brutal hover:shadow-brutal-lg hover:-translate-y-1 transition-all duration-200"
+    class="bg-brutal-white dark:bg-brutal-gray-dark border-4 border-brutal-black dark:border-white shadow-brutal hover:shadow-brutal-lg hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden"
   >
-    <div class="p-6">
+    <!-- Decoración de esquina -->
+    <div class="absolute top-0 right-0 w-16 h-16 bg-brutal-yellow opacity-20 transform translate-x-8 -translate-y-8 group-hover:translate-x-4 group-hover:-translate-y-4 transition-transform duration-300"></div>
+    
+    <div class="p-6 relative z-10">
       <!-- Título del proyecto -->
-      <h3 class="text-2xl font-bold text-brutal-black mb-3 uppercase tracking-wide">
+      <h3 class="text-2xl font-display font-bold text-brutal-black dark:text-white mb-3 uppercase tracking-wide group-hover:text-brutal-red dark:group-hover:text-brutal-yellow transition-colors">
         {{ proyecto.title }}
       </h3>
 
       <!-- Descripción -->
-      <p class="text-brutal-black mb-4 leading-relaxed">
+      <p class="text-brutal-black dark:text-gray-300 mb-4 leading-relaxed font-medium">
         {{ proyecto.description }}
       </p>
 
@@ -53,7 +57,7 @@ const getTechColor = (index: number): string => {
         <span
           v-for="(tech, index) in proyecto.technologies"
           :key="tech"
-          :class="['px-3 py-1 text-sm font-bold border-2 border-brutal-black', getTechColor(index)]"
+          :class="['px-3 py-1 text-sm font-bold border-2 border-brutal-black dark:border-white', getTechColor(index)]"
         >
           {{ tech }}
         </span>
@@ -64,12 +68,41 @@ const getTechColor = (index: number): string => {
         :href="proyecto.link"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-block w-full text-center bg-brutal-black text-brutal-white font-bold py-3 px-4 border-3 border-brutal-black hover:bg-brutal-white hover:text-brutal-black transition-colors duration-200"
+        class="inline-block w-full text-center py-4 px-6 text-lg font-bold uppercase tracking-wider transition-all duration-200 border-4 border-brutal-black dark:border-white"
+        :class="[
+          'bg-brutal-black dark:bg-white text-brutal-white dark:text-brutal-black',
+          'hover:bg-brutal-pink hover:text-white hover:border-brutal-pink',
+          'active:transform active:translate-x-1 active:translate-y-1'
+        ]"
       >
         {{ proyecto.linkText }} →
       </a>
     </div>
+
+    <!-- Efecto de borde brillante al hover -->
+    <div class="absolute inset-0 border-4 border-transparent group-hover:border-brutal-yellow transition-all duration-300 pointer-events-none"></div>
   </article>
 </template>
 
-<style scoped></style>
+<style scoped>
+/* Efecto de brillo al hover */
+article::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+article:hover::before {
+  left: 100%;
+}
+</style>

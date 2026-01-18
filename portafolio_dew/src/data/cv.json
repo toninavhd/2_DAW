@@ -3,7 +3,7 @@
     "name": "Antonio Navarro",
     "title": "Desarrollador Frontend especializado",
     "description": "Soy un desarrollador frontend apasionado por crear experiencias web únicas y memorables. Con experiencia en Vue.js, TypeScript y diseño brutalista, me especializo en construir interfaces modernas que destacan por su personalidad y funcionalidad.",
-    "photo": "https://www3.gobiernodecanarias.org/medusa/eforma/campus/pluginfile.php/8680847/user/icon/classic/f1?rev=359185568"
+    "photo": "/src/assets/Fotocv2.webp"
   },
   "skills": {
     "levelLabels": ["Básico", "Intermedio", "Avanzado", "Experto"],
@@ -81,7 +81,7 @@
         "title": "Portfolio Minimalista",
         "description": "Un portfolio de diseño brutalista con tipografía Helvetica y colores vibrantes, construido con Vue 3, TypeScript y TailwindCSS.",
         "technologies": ["Vue.js", "TypeScript", "TailwindCSS"],
-        "link": "https://github.com/tuusuario/portfolio",
+        "link": "https://github.com/toninavh/portfolio",
         "linkText": "Ver Repositorio"
       },
       {
@@ -124,16 +124,15 @@
       "description": "Creación de landing pages y sitios web responsive para clientes. Trabajo con HTML5, CSS3 y JavaScript vanilla."
     },
     {
-      "position": "Becario Desarrollador",
-      "company": "Startup Incubator",
-      "period": "2021 - 2022",
-      "description": "Apoyo en el desarrollo de prototipos MVP y herramientas internas. Primeros pasos con Vue.js y desarrollo frontend."
+      "position": "Becario SOC/Ciberseguridad",
+      "company": "Velorcios Group",
+      "period": "2025 - 2025",
+      "description": "Apoyo en el desempeño de tareas de ciberseguridad y herramientas internas como SIEM y SOAR. Primeros pasos en la informatica corporativa."
     }
   ],
   "contact": {
-    "email": "antonio.navarro@email.com",
-    "github": "https://github.com/tuusuario",
-    "linkedin": "https://linkedin.com/in/antonionavarro",
-    "twitter": "https://twitter.com/tuusuario"
+    "email": "toninavhd@gmail.com",
+    "github": "https://github.com/toninavhd",
+    "tumblr": "https://tumblr.com/uloe999"
   }
 }

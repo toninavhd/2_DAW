@@ -1,10 +1,34 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio de Antonio Navarro - Desarrollador Frontend especializado en Vue.js, TypeScript y diseño brutalista moderno"
+    />
+    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0d0d0d" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Portfolio - Antonio Navarro" />
+    <meta
+      property="og:description"
+      content="Desarrollador Frontend especializado en Vue.js, TypeScript y diseño brutalista moderno"
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Portfolio - Antonio Navarro</title>
+
     <style>
       /* Reset básico para estilo brutalista */
       * {
@@ -16,9 +40,16 @@
         margin: 0;
         padding: 0;
       }
+
+      /* Transición suave para el tema */
+      html {
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease;
+      }
     </style>
   </head>
-  <body>
+  <body class="antialiased">
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
