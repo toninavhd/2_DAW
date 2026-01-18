@@ -5,8 +5,8 @@ import cvData from '@/data/cv.json'
 <template>
   <div class="max-w-7xl mx-auto px-4 py-12">
     <!-- Título principal -->
-    <h1 class="text-6xl md:text-8xl font-bold text-brutal-black mb-8 tracking-tighter">
-      SOBRE <span class="text-brutal-red">MÍ</span>
+    <h1 class="text-6xl md:text-8xl font-bold text-brutal-white mb-8 tracking-tighter" style="-webkit-text-stroke: 2px white;">
+      SOBRE <span class="text-brutal-red" style="-webkit-text-stroke: 0;">MÍ</span>
     </h1>
 
     <div class="grid md:grid-cols-2 gap-8">
@@ -17,7 +17,7 @@ import cvData from '@/data/cv.json'
             <img
               :src="cvData.about.photo"
               :alt="cvData.about.name"
-              class="w-full aspect-square object-cover grayscale contrast-125"
+              class="w-full md:w-2/3 aspect-square object-cover grayscale contrast-125 mx-auto"
             />
             <!-- Efecto overlay -->
             <div
@@ -88,3 +88,4 @@ img:hover {
   filter: grayscale(0%) contrast(1);
 }
 </style>
+

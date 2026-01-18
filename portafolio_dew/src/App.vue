@@ -13,7 +13,7 @@ const menuItems = [
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-100 font-sans">
+  <div class="min-h-screen bg-brutal-black font-sans">
     <!-- Navigation - Estilo Brutalista -->
     <nav class="bg-brutal-white border-b-3 border-brutal-black sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-4">

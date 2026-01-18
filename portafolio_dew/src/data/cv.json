@@ -3,7 +3,7 @@
     "name": "Antonio Navarro",
     "title": "Desarrollador Frontend especializado",
     "description": "Soy un desarrollador frontend apasionado por crear experiencias web únicas y memorables. Con experiencia en Vue.js, TypeScript y diseño brutalista, me especializo en construir interfaces modernas que destacan por su personalidad y funcionalidad.",
-    "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+    "photo": "https://www3.gobiernodecanarias.org/medusa/eforma/campus/pluginfile.php/8680847/user/icon/classic/f1?rev=359185568"
   },
   "skills": {
     "levelLabels": ["Básico", "Intermedio", "Avanzado", "Experto"],
@@ -51,7 +51,7 @@
       {
         "id": 6,
         "name": "CSS3",
-        "logo": "https://upload.wikimedia.org/wikipedia/7/72/CSS_logo_2018.svg",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/7/72/CSS_logo_2018.svg",
         "description": "Animaciones, flexbox, grid y diseño responsive",
         "level": 4,
         "levelLabel": "Experto"
@@ -67,7 +67,7 @@
       {
         "id": 8,
         "name": "Node.js",
-        "logo": "https://upload.wikimedia.org/wikipedia/7/7e/Node.js_logo.svg",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Node.js_logo.svg",
         "description": "APIs REST con Express y gestión de dependencias",
         "level": 2,
         "levelLabel": "Intermedio"
@@ -137,4 +137,3 @@
     "twitter": "https://twitter.com/tuusuario"
   }
 }
-
