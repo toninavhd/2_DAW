@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tarjeta de Cumpleaños</title>
+  <link rel="stylesheet" href="/SSG/ia/style/styles.css" />
+</head>
+<body>
+  <header><h1>Tarjeta de Cumpleaños</h1></header>
+    <canvas id="confettiCanvas"></canvas>
+
+  <main class="layout">
+    <section class="left">
+      <form id="birthdayForm" class="form">
+        <input type="text" id="firstName" placeholder="Nombre" required />
+        <input type="text" id="lastName" placeholder="Apellido" required />
+        <input type="text" id="hobby" placeholder="Hobby" required />
+        <div class="buttons">
+          <button type="submit">Crear Tarjeta</button>
+          <button type="button" id="saveBtn" disabled>Guardar</button>
+          <button type="button" id="clearAll">Borrar todo</button>
+        </div>
+      </form>
+
+      <div id="card" class="card hidden" aria-live="polite">
+        <h2 class="card-title">¡Feliz Cumpleaños!</h2>
+        <p id="message" class="card-message"></p>
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <h3>Tarjetas guardadas</h3>
+      <div id="savedList" class="saved-list"></div>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

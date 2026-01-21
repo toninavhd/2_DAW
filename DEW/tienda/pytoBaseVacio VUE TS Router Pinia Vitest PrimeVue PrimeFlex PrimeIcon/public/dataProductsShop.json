@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "nombreProducto": "Camiseta Básica",
+    "descripcion": "Camiseta de algodón suave, perfecta para el día a día",
+    "precio": 19.99,
+    "stock": 50,
+    "imagen": "/assets/images/camiseta.jpg"
+  },
+  {
+    "id": 2,
+    "nombreProducto": "Pantalón Vaquero",
+    "descripcion": "Jeans经典 con corte moderno y cómodo",
+    "precio": 49.99,
+    "stock": 30,
+    "imagen": "/assets/images/pantalon.jpg"
+  },
+  {
+    "id": 3,
+    "nombreProducto": "Zapatillas Deportivas",
+    "descripcion": "Zapatillas ligeras ideales para correr y entrenar",
+    "precio": 79.99,
+    "stock": 25,
+    "imagen": "/assets/images/zapatillas.jpg"
+  },
+  {
+    "id": 4,
+    "nombreProducto": "Chaqueta de Cuero",
+    "descripcion": "Chaqueta de cuero genuino con diseño elegante",
+    "precio": 129.99,
+    "stock": 15,
+    "imagen": "/assets/images/chaqueta.jpg"
+  },
+  {
+    "id": 5,
+    "nombreProducto": "Bolso de Mano",
+    "descripcion": "Bolso compacto para ocasiones especiales",
+    "precio": 39.99,
+    "stock": 40,
+    "imagen": "/assets/images/bolso.jpg"
+  },
+  {
+    "id": 6,
+    "nombreProducto": "Gorra Urbana",
+    "descripcion": "Gorra ajustable con diseño urbano moderno",
+    "precio": 14.99,
+    "stock": 60,
+    "imagen": "/assets/images/gorra.jpg"
+  }
+]
+

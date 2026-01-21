@@ -1,0 +1,127 @@
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg-dark:#0f0f14;
+  --glass-bg:rgba(255,255,255,0.08);
+  --accent:#9b6bff;
+  --muted:rgba(255,255,255,0.7);
+  --card-w:420px;
+}
+body{
+  min-height:100vh;
+  font-family:Inter,system-ui,Arial,sans-serif;
+  background:linear-gradient(135deg,var(--bg-dark),#0b0b10);
+  color:white;
+  position:relative;
+  overflow:hidden;
+  padding:28px;
+}
+
+/* Psychedelic fog */
+@keyframes psychedelicFog{
+  0%{background:radial-gradient(600px 400px at 10% 20%, rgba(255,182,193,0.12), transparent 20%), radial-gradient(500px 350px at 80% 80%, rgba(173,216,230,0.12), transparent 20%);}
+  50%{background:radial-gradient(700px 450px at 80% 30%, rgba(221,160,221,0.12), transparent 20%), radial-gradient(450px 300px at 20% 70%, rgba(255,255,224,0.12), transparent 20%);}
+  100%{background:radial-gradient(650px 420px at 30% 80%, rgba(173,216,230,0.12), transparent 20%), radial-gradient(550px 360px at 70% 20%, rgba(255,182,193,0.12), transparent 20%);}
+}
+body::before{
+  content:"";
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  animation:psychedelicFog 12s ease-in-out infinite alternate;
+}
+
+/* Layout */
+header{position:relative;z-index:2;text-align:center;margin-bottom:18px}
+header h1{font-size:20px;color:var(--muted)}
+.layout{display:flex;gap:24px;align-items:flex-start;position:relative;z-index:2}
+.left{flex:1;min-width:320px;max-width:720px}
+.sidebar{width:320px;max-height:80vh;overflow:auto;padding:18px;border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);backdrop-filter:blur(8px);box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+
+/* Form */
+.form{display:flex;flex-direction:column;gap:12px;margin-bottom:16px}
+.form input{padding:12px;border-radius:12px;border:none;background:rgba(255,255,255,0.04);color:white}
+.buttons{display:flex;gap:8px}
+button{padding:10px 14px;border-radius:10px;border:none;background:var(--accent);color:white;cursor:pointer}
+button[disabled]{opacity:.5;cursor:default}
+#clearAll{background:#444;padding:10px 12px}
+
+/* Card (glassmorphism + 3D) */
+.card{width:var(--card-w);margin-top:6px;padding:22px;border-radius:16px;background:var(--glass-bg);backdrop-filter:blur(14px) saturate(120%);box-shadow:0 12px 40px rgba(0,0,0,0.6);transform:perspective(900px) rotateY(6deg) translateZ(0);transition:transform .28s ease,box-shadow .2s}
+.card.hidden{display:none}
+.card-title{font-size:20px;margin-bottom:8px}
+.card-message{font-size:16px;color:var(--muted)}
+
+/* Saved list */
+.saved-list{display:flex;flex-direction:column;gap:12px;padding-top:8px}
+.saved-item{cursor:pointer}
+.mini-card{
+  width:280px;
+  padding:14px;
+  border-radius:12px;
+  background:rgba(255,255,255,0.04);
+  backdrop-filter:blur(10px) saturate(120%);
+  box-shadow:0 8px 24px rgba(0,0,0,0.5);
+  transform:perspective(800px) rotateY(4deg);
+  transition:transform .12s,box-shadow .12s,opacity .12s;
+}
+.mini-card:hover{transform:translateX(6px) scale(1.01);box-shadow:0 12px 30px rgba(0,0,0,0.6)}
+.mini-title{font-size:16px;margin-bottom:6px}
+.mini-message{font-size:13px;color:rgba(255,255,255,0.75)}
+.saved-actions{display:flex;gap:8px;margin-top:8px;justify-content:flex-end}
+.action-btn{padding:6px 8px;border-radius:8px;border:none;background:transparent;color:var(--muted);cursor:pointer}
+
+/* Borde luminoso para mini tarjetas */
+.mini-card{
+  position:relative;
+  overflow:hidden;
+  width:280px;
+  padding:14px;
+  border-radius:12px;
+  background:rgba(255,255,255,0.04);
+  backdrop-filter:blur(10px) saturate(120%);
+  box-shadow:0 8px 24px rgba(0,0,0,0.5);
+  transform:perspective(800px) rotateY(4deg);
+  transition:transform .12s,box-shadow .12s,opacity .12s;
+  border:1px solid rgba(255,255,255,0.06);
+}
+
+/* Glow border (animated pastel gradient) */
+.mini-card::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  z-index:-1;
+  border-radius:14px;
+  background:linear-gradient(120deg, rgba(255,182,193,0.35), rgba(173,216,230,0.35), rgba(221,160,221,0.35), rgba(255,255,224,0.35));
+  filter:blur(10px) saturate(140%);
+  opacity:0.9;
+  transform:scale(1.02);
+  animation: glowRotate 6s linear infinite;
+  mix-blend-mode:screen;
+  pointer-events:none;
+}
+
+.mini-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:12px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  pointer-events:none;
+}
+
+/* Reduce glow opacity when hovering to feel interactive */
+.mini-card:hover::before{opacity:1;filter:blur(8px) saturate(150%)}
+
+/* Glow rotation */
+@keyframes glowRotate{
+  0%{transform:rotate(0deg) scale(1.02)}
+  50%{transform:rotate(180deg) scale(1.03)}
+  100%{transform:rotate(360deg) scale(1.02)}
+}
+
+/* Confetti de colores pastel (canvas detrás) */
+#confettiCanvas{
+  position:fixed;
+  inset:0;
+  z-index:1; /* detrás del contenido (contenido z-index:2) */
+  pointer-events:none;
+}
