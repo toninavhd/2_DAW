@@ -13,15 +13,15 @@
     "descripcion": "RICK OWENS drkshdw Flared Jeans - Pantalones vaqueros acampanados",
     "precio": 800.00,
     "stock": 30,
-    "imagen": "/assets/images/camiseta.jpeg"
+    "imagen": "/assets/images/jeans.webp"
   },
   {
     "id": 3,
-    "nombreProducto": "Zapatillas Deportivas",
-    "descripcion": "Zapatillas ligeras ideales para correr y entrenar",
-    "precio": 900.00,
+    "nombreProducto": "Balenciaga Steroid Boots",
+    "descripcion": "Botas Oversize con suela exagerada",
+    "precio": 690.00,
     "stock": 25,
-    "imagen": "/assets/images/3xl.jpg"
+    "imagen": "/assets/images/boots.avif"
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "descripcion": "Chaqueta de cuero genuino con diseño elegante",
     "precio": 1500.00,
     "stock": 15,
-    "imagen": "/assets/images/camiseta.avif"
+    "imagen": "/assets/images/chaqueta.avif"
   },
   {
     "id": 5,

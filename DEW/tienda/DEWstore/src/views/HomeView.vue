@@ -27,21 +27,21 @@
             <img src="@/assets/images/camiseta.avif" alt="Camiseta ACNE Studios" />
           </div>
           <h3>Camiseta ACNE Studios</h3>
-          <p>200.99€</p>
+          <p>220.00€</p>
         </RouterLink>
         <RouterLink to="/shop" class="featured-item">
           <div class="featured-image">
-            <img src="@/assets/images/3xl.jpg" alt="Zapatillas Deportivas" />
+            <img src="@/assets/images/3xl.jpg" alt="Balenciaga 3XL" />
           </div>
           <h3>Balenciaga 3XL</h3>
-          <p>990.99€</p>
+          <p>990.00€</p>
         </RouterLink>
         <RouterLink to="/shop" class="featured-item">
           <div class="featured-image">
-            <img src="@/assets/images/chaqueta.avif" alt="Chaqueta de Cuero" />
+            <img src="@/assets/images/chaqueta.avif" alt="Balenciaga Bomber de Cuero" />
           </div>
           <h3>Chaqueta de Cuero</h3>
-          <p>1200.99€</p>
+          <p>1500.00€</p>
         </RouterLink>
       </div>
     </section>
