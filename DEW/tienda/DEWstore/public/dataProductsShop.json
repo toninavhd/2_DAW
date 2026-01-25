@@ -1,17 +1,17 @@
 [
   {
     "id": 1,
-    "nombreProducto": "Camiseta Básica",
-    "descripcion": "Camiseta de algodón suave, perfecta para el día a día",
-    "precio": 19.99,
+    "nombreProducto": "Camiseta ACNE Studios",
+    "descripcion": "Camiseta de algodón suave, manga larga Boxy Fit",
+    "precio": 220.00,
     "stock": 50,
     "imagen": "/assets/images/camiseta.avif"
   },
   {
     "id": 2,
-    "nombreProducto": "Pantalón Vaquero",
-    "descripcion": "Jeans con corte moderno y cómodo",
-    "precio": 49.99,
+    "nombreProducto": "Rick Owens Jeans",
+    "descripcion": "RICK OWENS drkshdw Flared Jeans - Pantalones vaqueros acampanados",
+    "precio": 800.00,
     "stock": 30,
     "imagen": "/assets/images/camiseta.jpeg"
   },
@@ -19,33 +19,33 @@
     "id": 3,
     "nombreProducto": "Zapatillas Deportivas",
     "descripcion": "Zapatillas ligeras ideales para correr y entrenar",
-    "precio": 79.99,
+    "precio": 900.00,
     "stock": 25,
-    "imagen": "/assets/images/chaqueta.avif"
+    "imagen": "/assets/images/3xl.jpg"
   },
   {
     "id": 4,
-    "nombreProducto": "Chaqueta de Cuero",
+    "nombreProducto": "Balenciaga Bomber de Cuero",
     "descripcion": "Chaqueta de cuero genuino con diseño elegante",
-    "precio": 129.99,
+    "precio": 1500.00,
     "stock": 15,
-    "imagen": "/assets/images/placeholder.svg"
+    "imagen": "/assets/images/camiseta.avif"
   },
   {
     "id": 5,
-    "nombreProducto": "Bolso de Mano",
+    "nombreProducto": "Vivienne Westwood Bolso",
     "descripcion": "Bolso compacto para ocasiones especiales",
-    "precio": 39.99,
+    "precio": 800.00,
     "stock": 40,
-    "imagen": "/assets/images/placeholder.svg"
+    "imagen": "/assets/images/bolso.webp"
   },
   {
     "id": 6,
-    "nombreProducto": "Gorra Urbana",
-    "descripcion": "Gorra ajustable con diseño urbano moderno",
-    "precio": 14.99,
+    "nombreProducto": "VETEMENTS Flame Cap",
+    "descripcion": "Gorra ajustable hecha con denim de alta calidad",
+    "precio": 360.00,
     "stock": 60,
-    "imagen": "/assets/images/placeholder.svg"
+    "imagen": "/assets/images/cap.jpeg"
   }
 ]
 
