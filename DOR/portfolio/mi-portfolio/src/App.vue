@@ -228,7 +228,7 @@ const currentProject = computed(() => projects[currentSlide.value]);
             class="bg-[#ffde00] text-black p-8 hover:bg-white transition-colors duration-300 group"
           >
             <span class="text-sm font-bold uppercase tracking-wider text-black/60 mb-2 block">EMAIL</span>
-            <span class="text-xl font-bold uppercase tracking-wide group-hover:text-black">TONINAVHD@EMAIL.COM</span>
+            <span class="text-xl font-bold uppercase tracking-wide group-hover:text-black">TONINAVHD@GMAIL.COM</span>
           </a>
           
           <a 
@@ -241,12 +241,12 @@ const currentProject = computed(() => projects[currentSlide.value]);
           </a>
           
           <a 
-            href="https://soundcloud.com/uloee" 
+            href="https://soundcloud.com/petal5" 
             target="_blank"
             class="bg-[#0066ff] text-white p-8 hover:bg-white hover:text-[#0066ff] transition-colors duration-300 group"
           >
             <span class="text-sm font-bold uppercase tracking-wider text-white/60 mb-2 block">SOUNDCLOUD</span>
-            <span class="text-xl font-bold uppercase tracking-wide group-hover:text-[#0066ff]">@ULOEE</span>
+            <span class="text-xl font-bold uppercase tracking-wide group-hover:text-[#0066ff]">@PETAL5</span>
           </a>
           
           <a 
